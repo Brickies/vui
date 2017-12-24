@@ -1,0 +1,100 @@
+.v-scroller {
+  -webkit-tap-highlight-color: $black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.v-scroller > .v-scroller__content {
+  width: 100%;
+  -webkit-transform-origin: left top;
+  -webkit-transform: translateZ(0);
+  -moz-transform-origin: left top;
+  -moz-transform: translateZ(0);
+  -ms-transform-origin: left top;
+  -ms-transform: translateZ(0);
+  -o-transform-origin: left top;
+  -o-transform: translateZ(0);
+  transform-origin: left top;
+  transform: translateZ(0);
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer {
+  width: 100%;
+  height: 60px;
+  margin-top: -60px;
+  text-align: center;
+  font-size: $f16;
+  color: $gray-dark;
+}
+.v-scroller > .v-scroller__content > .v-scroller-loading {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: $f16;
+  line-height: 40px;
+  color: $gray-dark;
+  position: relative;
+}
+.v-scroller > .v-scroller__content > .v-scroller-loading > .no-data-text
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.v-scroller > .v-scroller__content > .v-scroller-loading > .spinner-holder,
+.v-scroller > .v-scroller__content > .v-scroller-loading > .no-data-text
+{
+  opacity: 0;
+  transition: opacity .15s linear;
+  -webkit-transition: opacity .15s linear;
+}
+.v-scroller > .v-scroller__content > .v-scroller-loading > .spinner-holder.active,
+.v-scroller > .v-scroller__content > .v-scroller-loading > .no-data-text.active
+{
+  opacity: 1;
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer .spinner-holder,
+.v-scroller > .v-scroller__content > .v-scroller-loading .spinner-holder {
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer .spinner-holder .arrow,
+.v-scroller > .v-scroller__content > .v-scroller-loading .spinner-holder .arrow {
+  width: 20px;
+  height: 20px;
+  margin: 8px auto 0 auto;
+  -webkit-transform: translate3d(0,0,0) rotate(0deg);
+  transform: translate3d(0,0,0) rotate(0deg);
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: transform .2s linear;
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer .spinner-holder .text,
+.v-scroller > .v-scroller__content > .v-scroller-loading .spinner-holder .text {
+  display: block;
+  margin: 0 auto;
+  font-size: $f14;
+  line-height: 20px;
+  color: $gray-dark;
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer .spinner-holder .spinner,
+.v-scroller > .v-scroller__content > .v-scroller-loading .spinner-holder .spinner {
+  margin-top: 14px;
+  width: 32px;
+  height: 32px;
+  fill: $gray-darker;
+  stroke: $gray-darker;
+}
+.v-scroller > .v-scroller__content > .pull-to-refresh-layer.active .spinner-holder .arrow {
+  -webkit-transform: translate3d(0,0,0) rotate(180deg);
+  transform: translate3d(0,0,0) rotate(180deg);
+}

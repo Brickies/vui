@@ -1,0 +1,11 @@
+{
+  "name": "vui/swipe",
+  "version": "0.5.0",
+  "description": "swipe component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

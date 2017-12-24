@@ -1,0 +1,20 @@
+@import './mixins/mask.css';
+
+.v-mask-toast {
+  @mixin mask $mask-bg-none;
+}
+.v-toast {
+  min-width: 145px;
+  max-width: 275px;
+  width: 100%;
+  padding: 16px;
+  font-size: $f14;
+  text-align: center;
+  border-radius: 4px;
+  background: $mask-bg-color-8;
+  color: $white;
+  animation: zoomIn .15s ease forwards;
+}
+.animated {
+  animation-fill-mode: both;
+}
