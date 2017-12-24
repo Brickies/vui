@@ -1,0 +1,78 @@
+{
+  "zh-CN": [
+    {
+      "name": "开发指南",
+      "groups": [
+        {
+          "list": [
+            {
+              "path": "/intro",
+              "title": "项目介绍"
+            },
+            {
+              "path": "/quickstart",
+              "title": "快速上手"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vui组件",
+      "showInMobile": true,
+      "groups": [
+        {
+          "groupName": "基础组件",
+          "list": [
+            {
+              "path": "/select",
+              "title": "Select 选择器"
+            },
+            {
+              "path": "/search",
+              "title": "Search 搜索框"
+            },
+            {
+              "path": "/search-list",
+              "title": "SearchList 搜索列表"
+            },
+            {
+              "path": "/swiper",
+              "title": "Swiper 轮播"
+            }
+          ]
+        },
+        {
+          "groupName": "表单",
+          "list": [
+            {
+              "path": "/switch",
+              "title": "Switch 开关"
+            }
+          ]
+        },
+        {
+          "groupName": "操作反馈",
+          "list": [
+            {
+              "path": "/toast",
+              "title": "Toast 轻提示"
+            },
+            {
+              "path": "/dialog",
+              "title": "Dialog 弹框"
+            },
+            {
+              "path": "/scroller",
+              "title": "Scroller 下拉刷新上拉加载"
+            },
+            {
+              "path": "/picker",
+              "title": "Picker 选择器"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

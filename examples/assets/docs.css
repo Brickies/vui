@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* font-size: 100%; */
+  vertical-align: baseline;
+}
+
+body {
+  font-family: monospace, 'Helvetica Neue', Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8f8f8;
+}
+
+a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+code.hljs {
+  line-height: 1.5;
+  font-family: Source Code Pro, Menlo, Monaco, Consolas, Courier, monospace;
+  font-size: 12px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: solid 1px #E5E5E5;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  -webkit-font-smoothing: auto;
+}
+
+.clearfix {
+  &::before {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+.main-content {
+  margin: 110px 20px 40px;
+  border: 1px solid #f2f2f2
+}
+
+.page-container {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-content {
+  box-sizing: border-box;
+  flex: 1;
+
+  section {
+    padding: 0 40px;
+
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      color: #333;
+      line-height: 1.5;
+      margin: 20px 0;
+      font-weight: normal;
+
+      &:hover a {
+        opacity: .4;
+      }
+
+      a {
+        float: left;
+        margin-left: -20px;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover {
+          opacity: .4;
+        }
+      }
+    }
+
+    > h1 {
+      font-size: 40px;
+    }
+
+    > h2 {
+      font-size: 36px;
+    }
+
+    > h3 {
+      font-size: 30px;
+    }
+
+    > h4 {
+      font-size: 24px;
+    }
+
+    > h5 {
+      font-size: 14px
+    }
+
+    > h6 {
+      font-size: 14px;
+      color: #666;
+    }
+
+    > p {
+      font-size: 14px;
+      line-height: 20px;
+      color: #666;
+      margin: 14px 0;
+      a {
+        color: #38f;
+      }
+    }
+
+    > ul li,
+    > ol li {
+      color: #666;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 10px 0 10px 20px;
+      padding-left: 20px;
+      position: relative;
+      a {
+        color: #38f;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        box-sizing: border-box;
+        border: 2px solid #999;
+        border-radius: 50%;
+        top: 6px;
+        left: 0;
+      }
+
+      li {
+        margin-left: 0;
+      }
+    }
+  }
+
+  p > code,
+  .table code,
+  li > code {
+    background-color: #F2F2F2;
+    display: inline-block;
+    border: 1px solid #E5E5E5;
+    padding: 2px 4px;
+    color: #333;
+    margin: 0 3px;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 45px;
+
+  th {
+    text-align: left;
+    border: 1px solid #E5E5E5;
+    background-color: #F2F2F2;
+    padding: 10px;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+  }
+
+  td {
+    border: 1px solid #E5E5E5;
+    padding: 10px;
+  }
+}
+.l {
+	float: left;
+}
+.r {
+	float: right;
+}
+.gray {
+	color: #999;
+}
+.clearfix {
+	&::after {
+		display: block;
+		content: ' ';
+		clear: both;
+	}
+}
+.placeholder {
+	font-size: 14px;
+	color: #CCC
+}
+.v-list {
+  padding: 0 0.32rem;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+
+  > li {
+    min-height: 60px;
+    padding-top: 21px;
+    border-bottom: 1px solid #f2f2f2;
+    overflow: hidden;
+    > label {
+      float: left;
+    }
+
+    > div {
+      float: right;
+    }
+
+    .v-list-arrow {
+      min-width: 100px;
+      margin-right: 10px;
+      position: relative;
+
+      > div {
+        float: right;
+        text-align: right;
+        margin-right: 10px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        right: -5px;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+  }
+}
+.vui-intro {
+  text-align: center;
+  &__logo {
+    img {
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    font-size: 45px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: monospace;
+  }
+  &__subtitle {
+    font-size: 15px;
+    color: #455a64;
+  }
+}

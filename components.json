@@ -1,0 +1,13 @@
+{
+  "switch": "./packages/switch/index.js",
+  "select": "./packages/select/index.js",
+  "search": "./packages/search/index.js",
+  "search-list": "./packages/search-list/index.js",
+  "swipe": "./packages/swipe/index.js",
+  "swipe-item": "./packages/swipe-item/index.js",
+  "swiper": "./packages/swiper/index.js",
+  "scroller": "./packages/scroller/index.js",
+  "toast": "./packages/toast/index.js",
+  "dialog": "./packages/dialog/index.js",
+  "picker": "./packages/picker/index.js"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vui/select",
+  "version": "0.5.0",
+  "description": "select component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

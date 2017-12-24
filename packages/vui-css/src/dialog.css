@@ -1,0 +1,72 @@
+@import './mixins/mask.css';
+.v-mask-dialog {
+  @mixin mask $mask-bg-color;
+}
+.v-dialog {
+  font-size: $f14;
+  &__layout{
+    background-color: $mask-bg-color;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+  }
+  &__content {
+    background: $white;
+    border-radius: 6px;
+    text-align :left;
+    color: $text-color;
+    width: 85%;
+    animation: zoomIn .15s ease forwards;
+    overflow: hidden;
+    z-index: 10;
+    .v-dialog-wrap {
+      padding-bottom: 20px;
+      position: relative;
+    }
+    .v-dialog-close {
+      width: 15px;
+      height: 15px;
+      float: right;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+    .v-dialog-title {
+      padding: 30px;
+      text-align: center;
+      font-size: $f16;
+      font-weight: 500;
+    }
+    .v-dialog-content {
+      padding: 0 15px;
+      text-align: center;
+    }
+    .v-dialog-footer {
+      overflow: hidden;
+      width: 100%;
+      border-top: 1px solid $white-border-color;
+      .v-dialog-cancel, .v-dialog-ok {
+        float: left;
+        width: 50%;
+        height: 45px;
+        line-height: 45px;
+        font-size: $f16;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+      .v-dialog-cancel {
+        border-right: 1px solid $white-border-color;
+      }
+      &.fullWidth{
+        div{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

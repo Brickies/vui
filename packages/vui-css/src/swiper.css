@@ -1,0 +1,67 @@
+.v-swiper {
+  width: 100%;
+  height: 4rem;
+  position: relative;
+  .v-default-swiper {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .v-thum-fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $bgdark;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justifx-content: center;
+    .v-thum-swiper {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+      }
+      .current-page {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color;
+        font-size: $f14;
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .v-swiper .v-thum-fixed .v-thum-swiper img {
+    width: auto;
+    height: 100%;
+    margin: auto;
+  }
+}
+@media (min-width: 568px) and (max-width: 736px) and (orientation: landscape) {
+  .v-swiper {
+    height: 6.5rem !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .v-swiper {
+    height: 8rem !important
+  }
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .v-swiper {
+    height: 9rem !important
+  }
+}
+@media (min-width: 1366px) {
+  .v-swiper {
+    height: 10rem !important
+  }
+}

@@ -1,0 +1,114 @@
+.v-select {
+  display: block;
+  float: left;
+  height: 42px;
+  &__list {
+    display: block;
+    overflow: hidden;
+    height: 42px;
+    padding: 11px 0;
+    .select-item {
+      display: block;
+      float: left;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 20px;
+      font-size: $f14;
+      position: relative;
+      .drop-title {
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        @mixin ellipsis;
+      }
+      .select-arrow-icon {
+        display: inline-block;
+        width: 8px;
+        border-width: 5px;
+        border-style: solid;
+        vertical-align: middle;
+        position: relative;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        margin-top: 4px;
+        margin-left: 5px;
+        margin-right: 3px;
+      }
+      .select-arrow {
+        display: inline-block;
+        bottom: -36px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 14px;
+        .select-a-line, .select-a-bg {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-width: 7px;
+          border-style: solid;
+          border-bottom-color: $white-border-color;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-left-color: transparent;
+          font-size: 0;
+          line-height: 0;
+          vertical-align: top;
+        }
+        .select-a-bg {
+          position: relative;
+          margin-top: -19px;
+          border-bottom-color: $white;
+        }
+      }
+    }
+    .select-item-on {
+      .select-arrow-icon {
+        border-top-color: transparent;
+        border-bottom-color: $blue;
+        color: $blue;
+        margin-top: -7px;
+        margin-right: 3px;
+      }
+      color: $blue;
+    }
+  }
+  &__content {
+    display: block;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    overflow: hidden;
+    z-index: 999;
+    .select-item {
+      display: block;
+      height: 55px;
+      line-height: 55px;
+      font-size: $f14;
+      padding: 0 16px;
+      position: relative;
+      border-bottom: 1px solid $white-border-color;
+      .select-icon {
+        position: absolute;
+        right: 16px;
+        top: 0;
+      }
+    }
+    .select-item-on {
+      color: $blue;
+    }
+  }
+  &__layout {
+    position: fixed;
+    top: 42px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: $mask-bg-color;
+  }
+}

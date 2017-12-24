@@ -1,0 +1,43 @@
+.v-swipe {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+
+  &__items {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    > div {
+      position: absolute;
+      transform: translateX(-100%);
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+    }
+    > div.is-active {
+        display: flex;
+        transform: none;
+      }
+  }
+
+  &__indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    .v-swipe-indicator {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 100%;
+      background: $light-border-color;
+      margin: 0 3px;
+      &.is-active {
+        opacity: 1;
+        background: $active-green;
+      }
+    }
+  }
+}

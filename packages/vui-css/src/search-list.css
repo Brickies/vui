@@ -1,0 +1,13 @@
+.v-search-list {
+  width: 100%;
+  min-height: 100%;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  z-index: 9;
+  li {
+    padding: 20px 15px;
+    border-bottom: 1px solid $white-border-color;
+  }
+}

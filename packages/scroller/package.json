@@ -1,0 +1,11 @@
+{
+  "name": "vui/scroller",
+  "version": "0.5.0",
+  "description": "scroller component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+
