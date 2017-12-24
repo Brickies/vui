@@ -46,7 +46,7 @@ $ npm run deploy
 
 #### 1. 新建一个组件
 
-**先通过make new 命令创建好组件所需文件**
+**请使用 Makefile 进行组件的创建，先通过 make new 命令创建好组件所需文件**
 
 ```shell
 make new component-name <component-name>

@@ -5,6 +5,9 @@ default: help
 new:
 	node build/bin/new.js $(filter-out $@,$(MAKECMDGOALS))
 
+del:
+	node build/bin/delete.js $(filter-out $@,$(MAKECMDGOALS))
+
 install:
 	npm run bootstrap
 

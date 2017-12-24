@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 console.log();
@@ -21,6 +22,7 @@ const { version } = require('../../package')
 // 文件路径
 const examplesPath = path.resolve(__dirname, '../../examples');
 const packagesPath = path.resolve(__dirname, '../../packages');
+const testPath = path.resolve(__dirname, '../../test/unit/specs');
 
 // 文件内容及其详细路径
 const examplesFiles = [
@@ -125,8 +127,29 @@ export default ${ComponentName};
   }
 ];
 
+const testFiles = [
+  {
+    filename: `${componentname}.spec.js`,
+    content: `import ${ComponentName} from 'packages/${componentname}';
+import { mount } from 'avoriaz';
+
+describe('${ComponentName}', () => {
+  let wrapper;
+
+  afterEach(() => {
+    wrapper && wrapper.destroy();
+  });
+
+  it('create a ${componentname}', () => {
+    wrapper = mount(${ComponentName});
+
+    expect(wrapper.hasClass('v-${componentname}')).to.be.true;
+  });
+});`
+  }
+]
+
 const componentsFile = require('../../components.json');
-// console.log(componentsFile)
 if (componentsFile[componentname]) {
   console.error(`${componentname} 已存在.`);
   process.exit(1);
@@ -138,7 +161,7 @@ fileSave(path.join(__dirname, '../../components.json'))
   .write(JSON.stringify(componentsFile, null, '  '), 'utf8')
   .end('\n');
 
-// 创建 组件文件
+// 创建 组件 example 文件
 examplesFiles.forEach(file => {
   fileSave(path.join(examplesPath, file.filename))
   .write(file.content, 'utf8')
@@ -146,8 +169,9 @@ examplesFiles.forEach(file => {
 });
 
 console.log('')
-console.log('examples文件创建完成')
+console.log('examples 文件创建完成')
 
+// 创建 组件 package 文件
 packagesFiles.forEach(file => {
   fileSave(path.join(packagesPath, file.filename))
   .write(file.content, 'utf8')
@@ -155,7 +179,17 @@ packagesFiles.forEach(file => {
 });
 
 console.log('')
-console.log('packages文件创建完成')
+console.log('packages 文件创建完成')
+
+// 创建 组件 test 文件
+testFiles.forEach(file => {
+  fileSave(path.join(testPath, file.filename))
+  .write(file.content, 'utf8')
+  .end('\n');
+});
+
+console.log('')
+console.log('test 文件创建完成')
 
 const navPath = path.resolve(__dirname, '../../examples/src');
 const navConfig = require('../../examples/src/nav.config.json');
@@ -177,3 +211,4 @@ console.log('nav导航创建完成')
 
 console.log('')
 console.log('===组件创建成功===')
+console.log('')

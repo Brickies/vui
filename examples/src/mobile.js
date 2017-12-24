@@ -20,7 +20,7 @@ routesConfig.push({
 });
 const router = new VueRouter({
   mode: 'hash',
-  base: isProduction ? '/vui/vue/' : __dirname,
+  base: isProduction ? '/vui/' : __dirname,
   routes: routesConfig
 });
 

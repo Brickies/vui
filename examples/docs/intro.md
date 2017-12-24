@@ -14,7 +14,7 @@
 
 ### 快速上手
 
-请参考 **快速上手** .
+请参考 [快速上手](https://brickies.github.io/vui/#/component/quickstart) .
 
 ### 贡献代码
 
