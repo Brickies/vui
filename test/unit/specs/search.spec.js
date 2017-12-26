@@ -16,7 +16,7 @@ describe('Search', () => {
     expect(wrapper.data().searchFlag).to.equal(true);
 
     const input = wrapper.find('.v-search__input')[0];
-    input.trigger('keyup')
+    input.simulate('keyup')
     expect(wrapper.data().searchFlag).to.equal(false);
 
     setTimeout(() => {
@@ -33,7 +33,7 @@ describe('Search', () => {
     expect(wrapper.data().searchFlag).to.equal(true);
 
     const input = wrapper.find('.v-search__input')[0];
-    input.trigger('keyup')
+    input.simulate('keyup')
     expect(wrapper.data().searchFlag).to.equal(true);
   });
 });

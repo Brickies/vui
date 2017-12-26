@@ -39,7 +39,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('active')).to.be.true;
-    wrapper.trigger('click');
+    wrapper.simulate('click');
     expect(wrapper.hasClass('active')).to.be.true;
   });
 
@@ -63,7 +63,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('inactive')).to.be.true;
-    wrapper.trigger('click');
+    wrapper.simulate('click');
     expect(wrapper.hasClass('inactive')).to.be.true;
   });
 });

@@ -25,7 +25,7 @@ describe('Swiper', () => {
 
     expect(wrapper.hasClass('v-swiper')).to.be.true;
     const defaultSwiper = wrapper.find('.v-default-swiper')[0]
-    defaultSwiper.trigger('click');
+    defaultSwiper.simulate('click');
     expect(wrapper.data().currentIndex).to.equal(0);
     expect(wrapper.data().currentThumIndex).to.equal(0);
     expect(wrapper.data().showThum).to.equal(true);
