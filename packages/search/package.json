@@ -1,6 +1,6 @@
 {
   "name": "vui/search",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "search component",
   "main": "./index.js",
   "author": "qiangdada",

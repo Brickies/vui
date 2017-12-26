@@ -1,6 +1,6 @@
 {
   "name": "vui/scroller",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "scroller component",
   "main": "./index.js",
   "author": "qiangdada",
