@@ -15,7 +15,7 @@ npm i x-vui -S
 ```javascript
 import Vue from 'vue'
 import vui from 'x-vui'
-import 'vui/lib/vui-css/index.css';
+import 'x-vui/lib/vui-css/index.css';
 
 Vue.use(vui)
 ```
@@ -29,8 +29,8 @@ import {
   Select
   // ...
 } from 'x-vui'
-import 'vui/lib/vui-css/scroller.css';
-import 'vui/lib/vui-css/select.css';
+import 'x-vui/lib/vui-css/scroller.css';
+import 'x-vui/lib/vui-css/select.css';
 
 Vue.component(Scroller.name, Scroller)
 Vue.component(Select.name, Select)
