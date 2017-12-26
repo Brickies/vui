@@ -15,7 +15,7 @@ describe('Picker', () => {
       }
     });
     expect(wrapper.hasClass('m-datetime')).not.to.be.true;
-    wrapper.trigger('click')
+    wrapper.simulate('click')
     expect(wrapper.data().picker).not.be.undefined;
   });
 });
