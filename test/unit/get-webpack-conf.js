@@ -91,7 +91,7 @@ const webpackConfig = {
       //   }]
       // },
       {
-        test: /\.vue$/,
+        test: /packages\/.*\.vue$/,
         // exclude: /packages\/swipe/,
         use: [{
           loader: 'vue-loader',
