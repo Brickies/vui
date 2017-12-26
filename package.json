@@ -1,6 +1,6 @@
 {
   "name": "x-vui",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "description": "A Private Component Library for Vue.js .",
   "main": "lib/vui.js",
   "style": "lib/vui-css/index.css",
