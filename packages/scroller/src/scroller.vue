@@ -73,7 +73,10 @@ export default {
       default: true
     },
     styles: {
-      type: Object
+      type: Object,
+      default () {
+        return {}
+      }
     },
     refreshText: {
       type: String,
