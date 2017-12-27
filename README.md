@@ -5,6 +5,12 @@
 
 > It's a A personal Vue UI component library .
 
+## 效果预览
+
+**请扫描以下二维码**
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/qrcode.png)
+
 ## 安装
 
 ```shell
