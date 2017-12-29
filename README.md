@@ -13,8 +13,18 @@
 
 ## 安装
 
+### npm 安装
+
 ```shell
 npm i x-vui -S
+```
+
+### CDN
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/x-vui/lib/vui-css/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/x-vui/lib/vui.js"></script>
 ```
 
 ## 快速开始
