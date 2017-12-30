@@ -1,0 +1,11 @@
+{
+  "name": "vui/content-placeholder",
+  "version": "1.2.3",
+  "description": "content-placeholder component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

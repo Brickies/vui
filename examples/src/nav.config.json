@@ -71,6 +71,15 @@
               "title": "Picker 选择器"
             }
           ]
+        },
+        {
+          "groupName": "页面占位",
+          "list": [
+            {
+              "path": "/content-placeholder",
+              "title": "ContentPlaceholder 内容占位"
+            }
+          ]
         }
       ]
     }

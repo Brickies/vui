@@ -1,0 +1,49 @@
+.v-content-placeholder {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none
+  }
+  &__background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    position: relative;
+  }
+}
+.v-placeholder-box {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  margin-bottom: 0;
+  background: white;
+  overflow: hidden;
+}
+.v-placeholder-row {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+

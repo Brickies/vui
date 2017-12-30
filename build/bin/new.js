@@ -90,7 +90,7 @@ export default ${ComponentName};
     filename: `${componentname}/package.json`,
     content: `{
   "name": "vui/${componentname}",
-  "version": ${version},
+  "version": "${version}",
   "description": "${componentname} component",
   "main": "./index.js",
   "author": "qiangdada",

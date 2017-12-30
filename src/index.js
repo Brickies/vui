@@ -9,6 +9,7 @@ import Swiper from '../packages/swiper/index.js';
 import Scroller from '../packages/scroller/index.js';
 import Dialog from '../packages/dialog/src/dialog.vue';
 import Picker from '../packages/picker/index.js';
+import ContentPlaceholder from '../packages/content-placeholder/index.js';
 import $Toast from '../packages/toast/index.js';
 import $Dialog from '../packages/dialog/index.js';
 
@@ -25,6 +26,7 @@ const install = function(Vue) {
   Vue.component(Scroller.name, Scroller);
   Vue.component(Dialog.name, Dialog);
   Vue.component(Picker.name, Picker);
+  Vue.component(ContentPlaceholder.name, ContentPlaceholder);
 
   Vue.prototype.$toast = $Toast;
   Vue.prototype.$dialog = $Dialog;
@@ -48,6 +50,7 @@ module.exports = {
   Scroller,
   Dialog,
   Picker,
+  ContentPlaceholder,
   $Toast,
   $Dialog
 };

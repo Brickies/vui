@@ -4,6 +4,7 @@ import App from './MobileApp';
 import navConfig from './nav.config.json';
 import routes from './router.config';
 import Vui from 'src/index';
+import isMobile from './isMobile.js';
 
 import 'packages/vui-css/src/index.css';
 
@@ -27,6 +28,11 @@ const router = new VueRouter({
 router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0);
+  }
+  const pathname = isProduction ? '/vui/' : '/';
+  if (!isMobile) {
+    window.location.replace(pathname);
+    return;
   }
   document.title = route.meta.title || document.title;
   next();

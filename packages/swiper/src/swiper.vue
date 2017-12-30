@@ -40,6 +40,10 @@ export default {
       type: String,
       default: 'swiper'
     },
+    defaultIndex: {
+      type: [Number, String],
+      default: 0
+    },
     auto: {
       type: Number,
       default: 5000
@@ -68,7 +72,7 @@ export default {
   },
   data () {
     return {
-      currentIndex: 0,
+      currentIndex: ~~this.defaultIndex,
       currentThumIndex: 0,
       showThum: false
     }
