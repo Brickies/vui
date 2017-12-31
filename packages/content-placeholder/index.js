@@ -1,4 +1,8 @@
 import ContentPlaceholder from './src/content-placeholder';
+import directive from './src/directive'
 
-export default ContentPlaceholder;
+export default {
+  directive,
+  ContentPlaceholder
+};
 

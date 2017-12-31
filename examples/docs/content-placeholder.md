@@ -152,6 +152,38 @@ export default {
 </script>
 ```
 
+### 使用 v-placeholder 指令进行占位
+
+**这里目前有个限制，就是得提前用css设置好需占位元素的宽高，占位符宽高默认为 100% 继承父元素**
+
+```html
+<template>
+  <div class="demo-content-placeholder">
+    <h2 v-placeholder="{ data: title, config }"></h2>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      title: '',
+      config: {
+        width: '200px',
+        height: '30px',
+        background: '#ddd'
+      }
+    }
+  },
+  mounted () {
+    setTimeout(() => {
+      this.title = 'hello placeholder'
+    }, 1500)
+  }
+}
+</script>
+```
+
 ### Attributes
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -160,6 +192,13 @@ export default {
 | show  | 占位组件是否显示  |  boolean  | — | false   |
 | size  | 占位组件背景size  |  string  | — | 250%   |
 | padding  | 占位组件padding    | function   | — | 5px 15px   |
+
+### directive
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| data  | 占位组件内容    | string   | — | — |
+| config  | 占位组件内容样式  |  object  | — | {width: '100%', height: '100%', background: '#eee', transition: 'all .3s'}   |
 
 ### Config
 
