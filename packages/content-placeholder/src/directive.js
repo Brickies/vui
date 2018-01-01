@@ -13,18 +13,13 @@ exports.install = Vue => {
       rawData = binding.value.data
       if (!binding.value.data) {
         let bindConfig = binding.value.config
-        let _placeHolder = '<div style="'
-        let _configObj = {}
-        for (let i in __DEFAULTCONFIG__) {
-          bindConfig && bindConfig.hasOwnProperty(i) ?
-            _configObj[i] = bindConfig[i] :
-            _configObj[i] = __DEFAULTCONFIG__[i]
-        }
-        Object.keys(_configObj).forEach((style) => {
-          _placeHolder += `${style}: ${_configObj[style]};`
+        let placeholder = '<div style="'
+        const configObj = Object.assign(__DEFAULTCONFIG__, bindConfig)
+        Object.keys(configObj).forEach((style) => {
+          placeholder += `${style}: ${configObj[style]};`
         })
-        _placeHolder += '"></div>'
-        el.innerHTML = _placeHolder
+        placeholder += '"></div>'
+        el.innerHTML = placeholder
       } else {
         el.innerHTML = binding.value.data
       }
