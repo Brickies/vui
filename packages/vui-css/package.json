@@ -1,6 +1,6 @@
 {
   "name": "vui-css",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "vui css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
