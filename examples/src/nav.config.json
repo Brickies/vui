@@ -39,6 +39,10 @@
             {
               "path": "/swiper",
               "title": "Swiper 轮播"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon 图标"
             }
           ]
         },
