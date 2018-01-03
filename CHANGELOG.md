@@ -14,3 +14,11 @@
 
 - **content-placeholder:** add content-placeholder component . [commit](https://github.com/Brickies/vui/commit/1399a5df2975bde63f448b47164bd061c1751fa6)
 - **v-placeholder:** add v-placeholder directive . [commit](https://github.com/Brickies/vui/commit/610d0395f6926ca2f10d328102e67241547a8709)
+
+
+## [v1.2.5(2017-1-3)](https://github.com/Brickies/vui/tree/v1.2.5)
+
+### Features
+
+- **icon:** add icon component . [commit](https://github.com/Brickies/vui/commit/fb71e1f5ff5037eed1c6b02df30126c0642ffe7d)
+- **version build:** add package verison build directive . 
