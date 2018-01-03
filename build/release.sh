@@ -21,6 +21,7 @@ then
   npm version $VERSION --message "[release] $VERSION"
   npm publish
   cd ../..
+  npm run version
 
   # commit
   git add -A

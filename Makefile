@@ -8,6 +8,9 @@ new:
 del:
 	node build/bin/delete.js $(filter-out $@,$(MAKECMDGOALS))
 
+version:
+	npm run version
+
 install:
 	npm run bootstrap
 
