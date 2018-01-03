@@ -1,6 +1,6 @@
 {
   "name": "vui/content-placeholder",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "content-placeholder component",
   "main": "./index.js",
   "author": "qiangdada",
