@@ -1,5 +1,9 @@
 <template>
-  <div class="v-select" v-clickoutside="hide" :style="{width: width}">
+  <div
+    class="v-select"
+    v-clickoutside="hide"
+    :style="{width: width}"
+    @touchmove="handleTouchMove">
     <ul class="v-select__list">
       <li class="select-item" :class="{'select-item-on':selectStatus}" @click="selectDown()">
         <span class="drop-title" :style="{'max-width': ellipsisWidth}" v-if="title && showTitle">{{title}}</span>
@@ -22,7 +26,12 @@
         </span>
       </li>
     </ul>
-    <div class="v-select__layout" v-show="selectStatus" @click="hide"></div>
+    <div
+      class="v-select__layout"
+      v-show="selectStatus"
+      @click="hide"
+      @touchmove="handleTouchMove">
+    </div>
   </div>
 </template>
 <script>
@@ -43,6 +52,10 @@ export default {
     ellipsisWidth: {
       type: String,
       default: '120px'
+    },
+    preventScroll: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -52,11 +65,11 @@ export default {
       showTitle: true
     };
   },
-  created () {
+  created() {
     this.currentIndex = ~~this.defaultValue
   },
   methods: {
-    hide () {
+    hide() {
       this.selectStatus = false;
     },
     selectDown() {
@@ -70,7 +83,13 @@ export default {
       this.selectStatus = false;
       this.currentIndex = currentIndex;
       this.$emit("search", currentIndex, id);
-    }
+    },
+    handleTouchMove(e) {
+      if (this.selectStatus && this.preventScroll) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+    },
   }
 };
 </script>
