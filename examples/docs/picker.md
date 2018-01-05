@@ -8,12 +8,12 @@
 
 ```html
 <template>
-  <x-picker 
+  <v-picker 
     title="选择日期"
     placeholder="请选择日期" 
     v-model="now_date" 
     type="date"
-  ></x-picker>
+  ></v-picker>
 </template>
 <script>
 export default {
@@ -30,13 +30,13 @@ export default {
 
 ```html
 <template>
-  <x-picker 
+  <v-picker 
     v-model="gender.value" 
     placeholder="请选择性别" 
     :default="gender.default" 
     title="选择性别" 
     type="custom"
-  ></x-picker>
+  ></v-picker>
 </template>
 <script>
 export default {
@@ -62,13 +62,13 @@ export default {
 
 ```html
 <template>
-  <x-picker 
+  <v-picker 
     title="选择日期"
     placeholder="请选择日期" 
     v-model="now_date" 
     type="date"
     :timeStep="20"
-  ></x-picker>
+  ></v-picker>
 </template>
 <script>
 export default {
@@ -84,13 +84,13 @@ export default {
 
 ```html
 <template>
-  <x-picker 
+  <v-picker 
     title="选择日期"
     placeholder="请选择日期" 
     v-model="now_date" 
     type="date"
     startMinute="2" endMinute="30"
-  ></x-picker>
+  ></v-picker>
 </template>
 <script>
 export default {

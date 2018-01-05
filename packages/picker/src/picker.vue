@@ -23,7 +23,7 @@ import Datetime from './datetime';
 import Custom from './custom';
 
 export default {
-  name: 'XPicker',
+  name: 'v-picker',
   data() {
     return {
       picker: null,
