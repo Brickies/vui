@@ -9,13 +9,13 @@
 ```html
 <template>
   <div>
-    <x-select
+    <v-select
     title="LIST ONE"
     defaultValue="0"
     :selectData="selectData"
     :alwaysShowTitle="false"
-    @search="searchFn"
-    ></x-select>
+    @select="selectFn"
+    ></v-select>
   </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
     };
   },
   methods: {
-    searchFn(index, id) {
+    selectFn(index, id) {
       console.log(index, id);
     }
   }
@@ -50,7 +50,7 @@ export default {
     title="LIST ONE"
     width="50%"
     defaultValue="0"
-    @search="searchFn"
+    @select="selectFn"
     :selectData="selectData"
     :alwaysShowTitle="false"
     ></v-select>
@@ -60,7 +60,7 @@ export default {
     width="50%"
     ellipsisWidth="65px"
     defaultValue="1"
-    @search="searchFn1"
+    @select="selectFn1"
     :selectData="selectData1"
     ></v-select>
   </div>
@@ -86,10 +86,10 @@ export default {
     };
   },
   methods: {
-    searchFn(index, id) {
+    selectFn(index, id) {
       console.log(index, id);
     },
-    searchFn1(index, id) {
+    selectFn1(index, id) {
       console.log(index, id);
     }
   }
@@ -107,8 +107,9 @@ export default {
 | defaultValue  | 默认选中的值    | number/string   | — | 0 |
 | width  | select组件的宽度    | string   | — | 100% |
 | ellipsisWidth  | select文字超过多出省略号的宽度    | string   | — | 120px |
+| preventScroll  | select下拉菜单出现时，是否禁止页面的scroll    | boolean   | — | true |
 
 ### Events
 | 事件名称      | 说明    | 回调参数      |
 |---------- |-------- |---------- |
-| search  | select 选择时的回调函数    | 参数1：索引，参数2：所中项的id值 |
+| select  | select 选中时的回调函数    | 参数1：索引，参数2：所中项的id值 |

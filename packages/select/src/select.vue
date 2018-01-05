@@ -82,7 +82,7 @@ export default {
       this.alwaysShowTitle ? this.showTitle = true : this.showTitle = false;
       this.selectStatus = false;
       this.currentIndex = currentIndex;
-      this.$emit("search", currentIndex, id);
+      this.$emit("select", currentIndex, id);
     },
     handleTouchMove(e) {
       if (this.selectStatus && this.preventScroll) {

@@ -4,7 +4,7 @@
     title="LIST ONE"
     width="50%"
     defaultValue="0"
-    @search="searchFn"
+    @select="selectFn"
     :selectData="selectData"
     :alwaysShowTitle="false"
     ></v-select>
@@ -13,7 +13,7 @@
     width="50%"
     ellipsisWidth="65px"
     defaultValue="1"
-    @search="searchFn1"
+    @select="selectFn1"
     :selectData="selectData1"
     ></v-select>
 	</div>
@@ -39,10 +39,10 @@ export default {
     };
   },
   methods: {
-    searchFn(index, id) {
+    selectFn(index, id) {
       console.log(index, id);
     },
-    searchFn1(index, id) {
+    selectFn1(index, id) {
       console.log(index, id);
     }
   }
