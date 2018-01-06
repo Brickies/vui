@@ -2,6 +2,7 @@
   <div class="app">
     <page-header></page-header>
     <div class="main-content">
+      <p class="page-tip">查看 demo 请将浏览器切换到手机调试模式</p>
       <div class="page-container clearfix">
         <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
         <div class="page-content">

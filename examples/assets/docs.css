@@ -55,8 +55,18 @@ code.hljs {
 }
 
 .main-content {
-  margin: 110px 20px 40px;
-  border: 1px solid #f2f2f2
+  margin: 120px 20px 40px;
+  border: 1px solid #f2f2f2;
+  .page-tip {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: #0067ed;
+  }
 }
 
 .page-container {
