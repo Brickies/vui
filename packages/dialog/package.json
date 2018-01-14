@@ -1,6 +1,6 @@
 {
   "name": "vui/dialog",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "dialog component",
   "main": "./index.js",
   "author": "qiangdada",

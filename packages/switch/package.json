@@ -1,6 +1,6 @@
 {
   "name": "vui/switch",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "switch component",
   "main": "./index.js",
   "author": "qiangdada",

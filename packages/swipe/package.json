@@ -1,6 +1,6 @@
 {
   "name": "vui/swipe",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "swipe component",
   "main": "./index.js",
   "author": "qiangdada",
