@@ -1,0 +1,71 @@
+.v-button {
+  position: relative;
+  height: 45px;
+  line-height: 43px;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  &--default {
+    color: $button-default-color;
+    background: $button-default-bg-color;
+    border: 1px solid $button-default-border-color;
+  }
+  &--primary {
+    color: $button-primary-color;
+    background: $button-primary-bg-color;
+    border: 1px solid $button-primary-border-color;
+  }
+  &--warn {
+    color: $button-warn-color;
+    background: $button-warn-bg-color;
+    border: 1px solid $button-warn-border-color;
+  }
+  &--disabled {
+    color: $button-disabled-color;
+    background-color: $button-disabled-bg-color;
+    border: 1px solid $button-disabled-border-color;
+  }
+  &--normal {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+  &--large {
+    width: 100%;
+  }
+  &--middle {
+    height: 34px;
+    padding: 0 10px;
+    min-width: 60px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  &--small {
+    display: inline-block;
+    width: 50px;
+    height: 22px;
+    line-height: 20px;
+    font-size: 10px;
+  }
+  &--block {
+    display: block;
+  }
+  &--fixed {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    border: none;
+    box-shadow: $box-shadow;
+    border-radius: 0;
+    z-index: 9;
+  }
+}

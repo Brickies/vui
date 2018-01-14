@@ -26,21 +26,21 @@ $mask-bg-color-8: rgba(0, 0, 0, .8);
 
 /* button */
 $button-default-color: $text-color;
-$button-default-background-color: $white;
+$button-default-bg-color: $white;
 $button-default-border-color: $gray-light;
 $button-primary-color: $white;
-$button-primary-background-color: #4b0;
-$button-primary-border-color: #0a0;
-$button-danger-color: $white;
-$button-danger-background-color: $red;
-$button-danger-border-color: #e33;
+$button-primary-bg-color: $blue;
+$button-primary-border-color: #3678d4;
+$button-warn-color: $white;
+$button-warn-bg-color: $red;
+$button-warn-border-color: #e33;
 $button-disabled-color: $gray-dark;
-$button-disabled-background-color: $gray-light;
+$button-disabled-bg-color: $gray-light;
 $button-disabled-border-color: $border-color;
-$button-bottom-action-default-color: $white;
-$button-bottom-action-default-background-color: #f85;
-$button-bottom-action-primary-color: $white;
-$button-bottom-action-primary-background-color: $red;
+// $button-bottom-action-default-color: $white;
+// $button-bottom-action-default-bg-color: #f85;
+// $button-bottom-action-primary-color: $white;
+// $button-bottom-action-primary-bg-color: $red;
 
 /* box-shadow */
 $box-shadow: 0 1px 3px $mask-bg-color;

@@ -51,7 +51,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('v-switch')).to.be.true;
-    expect(wrapper.hasClass('disabled')).to.be.true;
+    expect(wrapper.hasClass('v-switch--disabled')).to.be.true;
   });
 
   it('disabled switch should be unclickable', () => {

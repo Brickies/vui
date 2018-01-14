@@ -1,0 +1,11 @@
+{
+  "name": "vui/button",
+  "version": "1.2.5",
+  "description": "button component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

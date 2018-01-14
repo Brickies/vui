@@ -25,6 +25,10 @@
           "groupName": "基础组件",
           "list": [
             {
+              "path": "/button",
+              "title": "Button 按钮"
+            },
+            {
               "path": "/select",
               "title": "Select 选择器"
             },

@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   transition: border-color 0.3s, background-color 0.3s;
-  > input {
+  &__input {
     width: 0;
     height: 0;
     display: none;
@@ -30,7 +30,12 @@
     background: $white;
     box-shadow: $box-shadow;
   }
-  &.disabled {
+  &--default {
+    display: block;
+    position: relative;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  &--disabled {
     opacity: 0.6;
   }
   &.active {
@@ -41,7 +46,7 @@
     border: 1px solid $gray-light;
     background: $bgwhite;
   }
-  &.checked  &__scale {
+  &--checked  &__scale {
     transform: scale(0)
   }
 }

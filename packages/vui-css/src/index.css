@@ -10,6 +10,7 @@
 
 /* components css */
 @import './switch.css';
+@import './button.css';
 @import './select.css';
 @import './search.css';
 @import './search-list.css';

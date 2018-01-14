@@ -1,14 +1,22 @@
 
 <template>
   <label
-    :class="['v-switch', {'disabled': disabled}, currentVal?['checked', activeClass]:inactiveClass]"
+    class="v-switch"
+    :class="[
+      'v-switch--default',
+      {
+        'v-switch--disabled': disabled,
+        'v-switch--checked': currentVal
+      },
+      currentVal ? activeClass : inactiveClass
+    ]"
     :style="{
       width: width+'px',
       height: pheight+'px',
       borderRadius: radius
     }"
   >
-    <input type="checkbox" v-model="currentVal" @change="$emit('change', !currentVal, currentVal)" :disabled="disabled">
+    <input class="v-switch__input" type="checkbox" v-model="currentVal" @change="$emit('change', !currentVal, currentVal)" :disabled="disabled">
     <p :class="['v-switch__scale']"></p>
     <span class="v-switch__button" :style="{ transform, width: cwidth+'px' }"></span>
   </label>

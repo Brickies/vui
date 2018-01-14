@@ -11,6 +11,7 @@ import Dialog from '../packages/dialog/src/dialog.vue';
 import Picker from '../packages/picker/index.js';
 import Placeholder from '../packages/content-placeholder/index.js';
 import Icon from '../packages/icon/index.js';
+import Button from '../packages/button/index.js';
 import $Toast from '../packages/toast/index.js';
 import $Dialog from '../packages/dialog/index.js';
 
@@ -29,6 +30,7 @@ const install = function(Vue) {
   Vue.component(Picker.name, Picker);
   Vue.component(Placeholder.ContentPlaceholder.name, Placeholder.ContentPlaceholder);
   Vue.component(Icon.name, Icon);
+  Vue.component(Button.name, Button);
 
   Vue.prototype.$toast = $Toast;
   Vue.prototype.$dialog = $Dialog;
@@ -55,6 +57,7 @@ module.exports = {
   Picker,
   Placeholder,
   Icon,
+  Button,
   $Toast,
   $Dialog
 };
