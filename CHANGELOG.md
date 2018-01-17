@@ -22,3 +22,7 @@
 
 - **icon:** add icon component . [commit](https://github.com/Brickies/vui/commit/fb71e1f5ff5037eed1c6b02df30126c0642ffe7d)
 - **version build:** add package verison build directive . 
+
+## [v1.2.6(2017-1-14)](https://github.com/Brickies/vui/tree/v1.2.6)
+
+- **button** add button component . [commit](https://github.com/Brickies/vui/commit/bc0e69a337b671f7e50543047363e84f3b7d5876)
