@@ -149,6 +149,7 @@ describe('${ComponentName}', () => {
   }
 ]
 
+// 组件写入 components.json
 const componentsFile = require('../../components.json');
 if (componentsFile[componentname]) {
   console.error(`${componentname} 已存在.`);
@@ -191,6 +192,7 @@ testFiles.forEach(file => {
 console.log('')
 console.log('test 文件创建完成')
 
+// 组件写入 nav 导航
 const navPath = path.resolve(__dirname, '../../examples/src');
 const navConfig = require('../../examples/src/nav.config.json');
 

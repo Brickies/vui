@@ -1,7 +1,6 @@
 # [vui](https://brickies.github.io/vui/)
 
-[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/Brickies/vui.svg)](https://travis-ci.org/Brickies/vui) [![](https://badge.juejin.im/entry/5a43124251882512ae12ec90/likes.svg?style=flat)](https://juejin.im/post/5a430a31f265da43070389d2)
-<!-- [![Dependency](https://david-dm.org/Brickies/vui.svg)](https://david-dm.org/Brickies/vui) -->
+[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/Brickies/vui.svg)](https://travis-ci.org/Brickies/vui)
 
 > It's a A personal Vue UI component library .
 
