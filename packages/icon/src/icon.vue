@@ -12,7 +12,10 @@ export default {
       type: String,
       required: true
     },
-    size: [Number, String],
+    size: {
+      type: [Number, String],
+      default: 14
+    },
     fontUnit: {
       type: String,
       validator (val) {

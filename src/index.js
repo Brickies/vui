@@ -12,6 +12,8 @@ import Picker from '../packages/picker/index.js';
 import Placeholder from '../packages/content-placeholder/index.js';
 import Icon from '../packages/icon/index.js';
 import Button from '../packages/button/index.js';
+import Cell from '../packages/cell/index.js';
+import CellGroup from '../packages/cell-group/index.js';
 import $Toast from '../packages/toast/index.js';
 import $Dialog from '../packages/dialog/index.js';
 
@@ -31,6 +33,8 @@ const install = function(Vue) {
   Vue.component(Placeholder.ContentPlaceholder.name, Placeholder.ContentPlaceholder);
   Vue.component(Icon.name, Icon);
   Vue.component(Button.name, Button);
+  Vue.component(Cell.name, Cell);
+  Vue.component(CellGroup.name, CellGroup);
 
   Vue.prototype.$toast = $Toast;
   Vue.prototype.$dialog = $Dialog;
@@ -58,6 +62,8 @@ module.exports = {
   Placeholder,
   Icon,
   Button,
+  Cell,
+  CellGroup,
   $Toast,
   $Dialog
 };

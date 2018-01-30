@@ -12,5 +12,7 @@
   "picker": "./packages/picker/index.js",
   "content-placeholder": "./packages/content-placeholder/index.js",
   "icon": "./packages/icon/index.js",
-  "button": "./packages/button/index.js"
+  "button": "./packages/button/index.js",
+  "cell": "./packages/cell/index.js",
+  "cell-group": "./packages/cell-group/index.js"
 }

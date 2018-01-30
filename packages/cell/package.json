@@ -1,0 +1,11 @@
+{
+  "name": "vui/cell",
+  "version": "1.2.6",
+  "description": "cell component",
+  "main": "./index.js",
+  "author": "qiangdada",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

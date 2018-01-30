@@ -29,6 +29,10 @@
               "title": "Button 按钮"
             },
             {
+              "path": "/cell",
+              "title": "Cell 单元格"
+            },
+            {
               "path": "/select",
               "title": "Select 选择器"
             },

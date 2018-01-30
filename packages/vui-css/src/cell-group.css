@@ -1,0 +1,7 @@
+.v-cell-group {
+  background: $white;
+  &--top-bottom {
+    border-top: 1px solid $white-border-color;
+    border-bottom: 1px solid $white-border-color;
+  }
+}
