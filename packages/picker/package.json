@@ -1,6 +1,6 @@
 {
   "name": "vui/picker",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "picker component",
   "main": "./index.js",
   "author": "qiangdada",

@@ -1,6 +1,6 @@
 {
   "name": "vui/button",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "button component",
   "main": "./index.js",
   "author": "qiangdada",

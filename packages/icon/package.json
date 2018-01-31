@@ -1,6 +1,6 @@
 {
   "name": "vui/icon",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "icon component",
   "main": "./index.js",
   "author": "qiangdada",

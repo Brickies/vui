@@ -1,6 +1,6 @@
 {
   "name": "vui/cell-group",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "cell-group component",
   "main": "./index.js",
   "author": "qiangdada",
