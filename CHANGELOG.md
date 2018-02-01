@@ -25,4 +25,12 @@
 
 ## [v1.2.6(2017-1-14)](https://github.com/Brickies/vui/tree/v1.2.6)
 
+### Features
+
 - **button** add button component . [commit](https://github.com/Brickies/vui/commit/bc0e69a337b671f7e50543047363e84f3b7d5876)
+
+## [v1.2.7(2017-1-14)](https://github.com/Brickies/vui/tree/v1.2.7)
+
+### Features
+
+- **cell** add cell and cell-group component . [commit](https://github.com/Brickies/vui/commit/5bc4b65cb2560738b43cbfae24f35e8fc28f181c)
