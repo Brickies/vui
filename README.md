@@ -77,3 +77,7 @@ Vue.prototype.$dialog = $Dialog
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
+
+## 特别感谢
+
+该组件库部分灵感来自于 [`element`](https://github.com/ElemeFE/element) 和 [`vant`](https://github.com/youzan/vant)，这里感谢 [`饿了么前端团队`](https://github.com/ElemeFE) 和 [`有赞前端团队`](https://github.com/youzan) 对开源项目的贡献，手动点波赞 👍 
