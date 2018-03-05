@@ -13,7 +13,7 @@
     "bootstrap": "yarn || npm install",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && cp-cli packages/vui-css/lib lib/vui-css",
+    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css",
     "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
     "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
