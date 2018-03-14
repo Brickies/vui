@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 @component-namespace page {
   @b header {
     position: fixed;

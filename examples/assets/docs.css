@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-  /* font-size: 100%; */
   vertical-align: baseline;
 }
 
@@ -34,7 +33,7 @@ code.hljs {
   font-family: Source Code Pro, Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: #2a3138;
   border: solid 1px #E5E5E5;
   margin-bottom: 25px;
   border-radius: 4px;
@@ -112,23 +111,23 @@ code.hljs {
     }
 
     > h1 {
-      font-size: 40px;
+      font-size: 34px;
     }
 
     > h2 {
-      font-size: 36px;
+      font-size: 28px;
     }
 
     > h3 {
-      font-size: 30px;
+      font-size: 22px;
     }
 
     > h4 {
-      font-size: 24px;
+      font-size: 18px;
     }
 
     > h5 {
-      font-size: 14px
+      font-size: 16px
     }
 
     > h6 {
@@ -182,9 +181,10 @@ code.hljs {
     background-color: #F2F2F2;
     display: inline-block;
     border: 1px solid #E5E5E5;
-    padding: 2px 4px;
+		border-radius: 3px;
+    padding: 1px 3px;
     color: #333;
-    margin: 0 3px;
+    margin: 0 2px;
   }
 }
 

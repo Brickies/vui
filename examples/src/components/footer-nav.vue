@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 @component-namespace footer {
   @b nav {
     padding: 24px 40px;
@@ -91,7 +91,7 @@ export default {
       color: #333;
       overflow: hidden;
       position: relative;
-      font-size: 20px;
+      font-size: 14px;
       line-height: 1.5;
     }
     @e link:hover {
