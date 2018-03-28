@@ -1,16 +1,16 @@
-import Swipe from 'packages/swipe';
-import { mount } from 'avoriaz';
+import Swipe from 'packages/swiper/swipe'
+import { mount } from 'avoriaz'
 
 describe('Swipe', () => {
-  let wrapper;
+  let wrapper
 
   afterEach(() => {
-    wrapper && wrapper.destroy();
-  });
+    wrapper && wrapper.destroy()
+  })
 
   it('create a swipe', () => {
-    wrapper = mount(Swipe);
+    wrapper = mount(Swipe)
 
-    expect(wrapper.hasClass('v-swipe')).to.be.true;
-  });
-});
+    expect(wrapper.hasClass('v-swipe')).to.be.true
+  })
+})

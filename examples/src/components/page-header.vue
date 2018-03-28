@@ -23,7 +23,7 @@
 export default {
   data() {
     return {
-      version: window._global.version,
+      // version: window._global.version,
       scrollTop: 0
     };
   },

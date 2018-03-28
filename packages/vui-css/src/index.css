@@ -7,21 +7,19 @@
 @import './common/reset.css';
 @import './common/var.css';
 
-
-/* components css */
-@import './switch.css';
 @import './button.css';
-@import './select.css';
+@import './cell.css';
+@import './cell-group.css';
+@import './icon.css';
+@import './dialog.css';
+@import './picker.css';
+@import './scroller.css';
 @import './search.css';
 @import './search-list.css';
+@import './select.css';
 @import './swipe.css';
 @import './swipe-item.css';
 @import './swiper.css';
-@import './scroller.css';
+@import './switch.css';
+@import './skeleton.css';
 @import './toast.css';
-@import './dialog.css';
-@import './picker.css';
-@import './content-placeholder.css';
-@import './icon.css';
-@import './cell.css';
-@import './cell-group.css';

@@ -26,14 +26,6 @@
       img {
         width: 100%;
       }
-      .current-page {
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: $color;
-        font-size: $f14;
-      }
     }
   }
 }

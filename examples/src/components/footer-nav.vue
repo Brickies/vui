@@ -5,14 +5,14 @@
       v-if="leftNav"
       class="footer-nav__link footer-nav__left"
       @click="handleNavClick('prev')">
-      <span>< {{ leftNav.title }}</span>
+      <v-icon name="arrow-left" size="12"></v-icon><span> {{ leftNav.title }}</span>
     </a>
     <a
       href="javascript:void(0)"
       v-if="rightNav"
       class="footer-nav__link footer-nav__right"
       @click="handleNavClick('next')">
-      <span>{{ rightNav.title }} ></span>
+      <span>{{ rightNav.title }} </span><v-icon name="arrow-right" size="12"></v-icon>
     </a>
   </div>
 </template>

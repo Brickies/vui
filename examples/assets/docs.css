@@ -1,4 +1,4 @@
-* {
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, iframe {
   margin: 0;
   padding: 0;
   border: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: monospace, 'Helvetica Neue', Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   background-color: #f8f8f8;
@@ -212,71 +212,24 @@ code.hljs {
     padding: 10px;
   }
 }
+
 .l {
 	float: left;
 }
+
 .r {
 	float: right;
 }
+
 .gray {
 	color: #999;
 }
-.clearfix {
-	&::after {
-		display: block;
-		content: ' ';
-		clear: both;
-	}
-}
+
 .placeholder {
 	font-size: 14px;
 	color: #CCC
 }
-.v-list {
-  padding: 0 0.32rem;
-  background: #fff;
-  color: #333;
-  font-size: 14px;
 
-  > li {
-    min-height: 60px;
-    padding-top: 21px;
-    border-bottom: 1px solid #f2f2f2;
-    overflow: hidden;
-    > label {
-      float: left;
-    }
-
-    > div {
-      float: right;
-    }
-
-    .v-list-arrow {
-      min-width: 100px;
-      margin-right: 10px;
-      position: relative;
-
-      > div {
-        float: right;
-        text-align: right;
-        margin-right: 10px;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 4px;
-        right: -5px;
-        width: 10px;
-        height: 10px;
-        border-top: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    }
-  }
-}
 .vui-intro {
   text-align: center;
   &__logo {

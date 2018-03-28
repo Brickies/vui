@@ -5,26 +5,24 @@
  * Licensed under the MIT License.
  * https://raw.github.com/zynga/scroller/master/MIT-LICENSE.txt
  */
-/* eslint-disable no-mixed-operators */
-/* eslint-disable no-restricted-properties */
-/* eslint-disable no-cond-assign */
+/* eslint-disable */
 
-const Animate = require('./animate');
+var Animate = require('./animate');
 
-const Scroller = function (component, content, options) {
-  const self = this;
+var Scroller = function (component, content, options) {
+  var self = this;
   if (!component) return;
 
   options = options || {};
 
   self.options = {
-    onSelect() {},
+    onSelect: function() {},
     itemHeight: 38,
   };
 
   /* eslint-disable no-restricted-syntax */
   /* eslint-disable guard-for-in */
-  for (const key in options) {
+  for (var key in options) {
     if (options[key] !== undefined) {
       self.options[key] = options[key];
     }
@@ -34,17 +32,17 @@ const Scroller = function (component, content, options) {
   self.__component = component;
   self.__itemHeight = self.options.itemHeight;
 
-  const supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
+  var supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
     return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
   }());
 
-  const _event = {
+  var _event = {
     start: supportTouch ? 'touchstart' : 'mousedown',
     move: supportTouch ? 'touchmove' : 'mousemove',
     end: supportTouch ? 'touchend' : 'mouseup',
   };
 
-  component.addEventListener(_event.start, (e) => {
+  component.addEventListener(_event.start, function(e) {
     if (e.target.tagName.match(/input|textarea|select/i)) {
       return;
     }
@@ -52,16 +50,16 @@ const Scroller = function (component, content, options) {
     self.__doTouchStart(e, e.timeStamp);
   }, false);
 
-  component.addEventListener(_event.move, (e) => {
+  component.addEventListener(_event.move, function(e) {
     self.__doTouchMove(e, e.timeStamp);
   }, false);
 
-  component.addEventListener(_event.end, (e) => {
+  component.addEventListener(_event.end, function(e) {
     self.__doTouchEnd(e.timeStamp);
   }, false);
 };
 
-const members = {
+var members = {
   value: null,
   __prevValue: null,
   __isSingleTouch: false,
@@ -86,19 +84,19 @@ const members = {
   __maxDecelerationScrollTop: null,
   __decelerationVelocityY: null,
 
-  setDimensions(clientHeight, contentHeight, totalItemCount) {
-    const self = this;
+  setDimensions: function(clientHeight, contentHeight, totalItemCount) {
+    var self = this;
 
     self.__clientHeight = clientHeight;
     self.__contentHeight = contentHeight;
 
-    const clientItemCount = Math.round(self.__clientHeight / self.__itemHeight);
+    var clientItemCount = Math.round(self.__clientHeight / self.__itemHeight);
 
     self.__minScrollTop = -self.__itemHeight * (clientItemCount / 2);
     self.__maxScrollTop = self.__minScrollTop + totalItemCount * self.__itemHeight - 0.1;
   },
-  selectByIndex(index, animate) {
-    const self = this;
+  selectByIndex: function(index, animate) {
+    var self = this;
     if (index < 0 || index > self.__content.childElementCount - 1) {
       return;
     }
@@ -109,10 +107,10 @@ const members = {
     self.__selectItem(self.__content.children[index]);
   },
 
-  select(value, animate) {
-    const self = this;
-    const children = self.__content.children;
-    for (let i = 0, len = children.length; i < len; i++) {
+  select: function(value, animate) {
+    var self = this;
+    var children = self.__content.children;
+    for (var i = 0, len = children.length; i < len; i++) {
       if (children[i].dataset.value === value) {
         self.selectByIndex(i, animate);
         return;
@@ -121,8 +119,8 @@ const members = {
     self.selectByIndex(0, animate);
   },
 
-  scrollTo(top, animate) {
-    const self = this;
+  scrollTo: function(top, animate) {
+    var self = this;
 
     animate = (animate === undefined) ? true : animate;
 
@@ -142,8 +140,8 @@ const members = {
     self.__publish(top, 250);
   },
 
-  __selectItem(selectedItem) {
-    const self = this;
+  __selectItem: function(selectedItem) {
+    var self = this;
 
     if (self.value !== null) {
       self.__prevValue = self.value;
@@ -152,9 +150,9 @@ const members = {
     self.value = selectedItem.dataset.value;
   },
 
-  __scrollingComplete() {
-    const self = this;
-    const index = Math.round((self.__scrollTop - self.__minScrollTop - self.__itemHeight / 2) / self.__itemHeight);
+  __scrollingComplete: function() {
+    var self = this;
+    var index = Math.round((self.__scrollTop - self.__minScrollTop - self.__itemHeight / 2) / self.__itemHeight);
 
     self.__selectItem(self.__content.children[index]);
 
@@ -163,20 +161,20 @@ const members = {
     }
   },
 
-  __doTouchStart(ev, timeStamp) {
-    const touches = ev.touches;
-    const self = this;
-    const target = ev.touches ? ev.touches[0] : ev;
-    const isMobile = !!ev.touches;
+  __doTouchStart: function(ev, timeStamp) {
+    var touches = ev.touches;
+    var self = this;
+    var target = ev.touches ? ev.touches[0] : ev;
+    var isMobile = !!ev.touches;
 
     if (ev.touches && touches.length == null) {
-      throw new Error(`Invalid touch list: ${touches}`);
+      throw new Error('Invalid touch list:' + touches);
     }
     if (timeStamp instanceof Date) {
       timeStamp = timeStamp.valueOf();
     }
     if (typeof timeStamp !== 'number') {
-      throw new Error(`Invalid timestamp value: ${timeStamp}`);
+      throw new Error('Invalid timestamp value:' + timeStamp);
     }
 
     self.__interruptedAnimation = true;
@@ -194,8 +192,8 @@ const members = {
     }
 
     // Use center point when dealing with two fingers
-    let currentTouchTop;
-    const isSingleTouch = (isMobile && touches.length === 1) || !isMobile;
+    var currentTouchTop;
+    var isSingleTouch = (isMobile && touches.length === 1) || !isMobile;
     if (isSingleTouch) {
       currentTouchTop = target.pageY;
     } else {
@@ -214,20 +212,20 @@ const members = {
     self.__positions = [];
   },
 
-  __doTouchMove(ev, timeStamp, scale) {
-    const self = this;
-    const touches = ev.touches;
-    const target = ev.touches ? ev.touches[0] : ev;
-    const isMobile = !!ev.touches;
+  __doTouchMove: function(ev, timeStamp, scale) {
+    var self = this;
+    var touches = ev.touches;
+    var target = ev.touches ? ev.touches[0] : ev;
+    var isMobile = !!ev.touches;
 
     if (touches && touches.length == null) {
-      throw new Error(`Invalid touch list: ${touches}`);
+      throw new Error('Invalid touch list: '+ touches);
     }
     if (timeStamp instanceof Date) {
       timeStamp = timeStamp.valueOf();
     }
     if (typeof timeStamp !== 'number') {
-      throw new Error(`Invalid timestamp value: ${timeStamp}`);
+      throw new Error('Invalid timestamp value: ' + timeStamp);
     }
 
     // Ignore event when tracking is not enabled (event might be outside of element)
@@ -235,7 +233,7 @@ const members = {
       return;
     }
 
-    let currentTouchTop;
+    var currentTouchTop;
 
     // Compute move based around of center of fingers
     if (isMobile && touches.length === 2) {
@@ -244,18 +242,18 @@ const members = {
       currentTouchTop = target.pageY;
     }
 
-    const positions = self.__positions;
+    var positions = self.__positions;
 
     // Are we already is dragging mode?
     if (self.__isDragging) {
-      const moveY = currentTouchTop - self.__lastTouchTop;
-      let scrollTop = self.__scrollTop;
+      var moveY = currentTouchTop - self.__lastTouchTop;
+      var scrollTop = self.__scrollTop;
 
       if (self.__enableScrollY) {
         scrollTop -= moveY;
 
-        const minScrollTop = self.__minScrollTop;
-        const maxScrollTop = self.__maxScrollTop;
+        var minScrollTop = self.__minScrollTop;
+        var maxScrollTop = self.__maxScrollTop;
 
         if (scrollTop > maxScrollTop || scrollTop < minScrollTop) {
           // Slow down on the edges
@@ -280,10 +278,10 @@ const members = {
 
       // Otherwise figure out whether we are switching into dragging mode now.
     } else {
-      const minimumTrackingForScroll = 0;
-      const minimumTrackingForDrag = 5;
+      var minimumTrackingForScroll = 0;
+      var minimumTrackingForDrag = 5;
 
-      const distanceY = Math.abs(currentTouchTop - self.__initialTouchTop);
+      var distanceY = Math.abs(currentTouchTop - self.__initialTouchTop);
 
       self.__enableScrollY = distanceY >= minimumTrackingForScroll;
 
@@ -302,14 +300,14 @@ const members = {
     self.__lastScale = scale;
   },
 
-  __doTouchEnd(timeStamp) {
-    const self = this;
+  __doTouchEnd: function(timeStamp) {
+    var self = this;
 
     if (timeStamp instanceof Date) {
       timeStamp = timeStamp.valueOf();
     }
     if (typeof timeStamp !== 'number') {
-      throw new Error(`Invalid timestamp value: ${timeStamp}`);
+      throw new Error('Invalid timestamp value: '+ timeStamp);
     }
 
     // Ignore event when tracking is not enabled (no touchstart event on element)
@@ -331,12 +329,12 @@ const members = {
       // Verify that the last move detected was in some relevant time frame
       if (self.__isSingleTouch && (timeStamp - self.__lastTouchMove) <= 100) {
         // Then figure out what the scroll position was about 100ms ago
-        const positions = self.__positions;
-        const endPos = positions.length - 1;
-        let startPos = endPos;
+        var positions = self.__positions;
+        var endPos = positions.length - 1;
+        var startPos = endPos;
 
         // Move pointer to position measured 100ms ago
-        for (let i = endPos; i > 0 && positions[i] > (self.__lastTouchMove - 100); i -= 2) {
+        for (var i = endPos; i > 0 && positions[i] > (self.__lastTouchMove - 100); i -= 2) {
           startPos = i;
         }
 
@@ -344,14 +342,14 @@ const members = {
         // we cannot compute any useful deceleration.
         if (startPos !== endPos) {
           // Compute relative movement between these two points
-          const timeOffset = positions[endPos] - positions[startPos];
-          const movedTop = self.__scrollTop - positions[startPos - 1];
+          var timeOffset = positions[endPos] - positions[startPos];
+          var movedTop = self.__scrollTop - positions[startPos - 1];
 
           // Based on 50ms compute the movement to apply for each render step
           self.__decelerationVelocityY = movedTop / timeOffset * (1000 / 60);
 
           // How much velocity is required to start the deceleration
-          const minVelocityToStartDeceleration = 4;
+          var minVelocityToStartDeceleration = 4;
 
           // Verify that we have enough velocity to start deceleration
           if (Math.abs(self.__decelerationVelocityY) > minVelocityToStartDeceleration) {
@@ -371,11 +369,11 @@ const members = {
 
   // Easing Equations (c) 2003 Robert Penner, all rights reserved.
   // Open source under the BSD License.
-  __easeOutCubic(pos) {
+  __easeOutCubic: function(pos) {
     return (Math.pow((pos - 1), 3) + 1);
   },
 
-  __easeInOutCubic(pos) {
+  __easeInOutCubic: function(pos) {
     if ((pos /= 0.5) < 1) {
       return 0.5 * Math.pow(pos, 3);
     }
@@ -383,11 +381,11 @@ const members = {
   },
 
   // Applies the scroll position to the content element
-  __publish(top, animationDuration) {
-    const self = this;
+  __publish: function(top, animationDuration) {
+    var self = this;
 
     // Remember whether we had an animation, then we try to continue based on the current "drive" of the animation
-    const wasAnimating = self.__isAnimating;
+    var wasAnimating = self.__isAnimating;
     if (wasAnimating) {
       Animate.stop(wasAnimating);
       self.__isAnimating = false;
@@ -397,10 +395,10 @@ const members = {
       // Keep scheduled positions for scrollBy functionality
       self.__scheduledTop = top;
 
-      const oldTop = self.__scrollTop;
-      const diffTop = top - oldTop;
+      var oldTop = self.__scrollTop;
+      var diffTop = top - oldTop;
 
-      const step = (percent, now, render) => {
+      var step = function (percent, now, render) {
         self.__scrollTop = oldTop + (diffTop * percent);
           // Push values out
         if (self.options.callback) {
@@ -408,11 +406,11 @@ const members = {
         }
       };
 
-      const verify = function (id) {
+      var verify = function (id) {
         return self.__isAnimating === id;
       };
 
-      const completed = (renderedFramesPerSecond, animationId, wasFinished) => {
+      var completed = function(renderedFramesPerSecond, animationId, wasFinished) {
         if (animationId === self.__isAnimating) {
           self.__isAnimating = false;
         }
@@ -434,31 +432,31 @@ const members = {
   },
 
   // Called when a touch sequence end and the speed of the finger was high enough to switch into deceleration mode.
-  __startDeceleration(timeStamp) {
-    const self = this;
+  __startDeceleration: function(timeStamp) {
+    var self = this;
 
     self.__minDecelerationScrollTop = self.__minScrollTop;
     self.__maxDecelerationScrollTop = self.__maxScrollTop;
 
     // Wrap class method
-    const step = (percent, now, render) => {
+    var step = function(percent, now, render) {
       self.__stepThroughDeceleration(render);
     };
 
     // How much velocity is required to keep the deceleration running
-    const minVelocityToKeepDecelerating = 0.5;
+    var minVelocityToKeepDecelerating = 0.5;
 
     // Detect whether it's still worth to continue animating steps
     // If we are already slow enough to not being user perceivable anymore, we stop the whole process here.
-    const verify = () => {
-      const shouldContinue = Math.abs(self.__decelerationVelocityY) >= minVelocityToKeepDecelerating;
+    var verify = function() {
+      var shouldContinue = Math.abs(self.__decelerationVelocityY) >= minVelocityToKeepDecelerating;
       if (!shouldContinue) {
         self.__didDecelerationComplete = true;
       }
       return shouldContinue;
     };
 
-    const completed = (renderedFramesPerSecond, animationId, wasFinished) => {
+    var completed = function(renderedFramesPerSecond, animationId, wasFinished) {
       self.__isDecelerating = false;
       if (self.__scrollTop <= self.__minScrollTop || self.__scrollTop >= self.__maxScrollTop) {
         self.scrollTo(self.__scrollTop);
@@ -474,12 +472,12 @@ const members = {
   },
 
   // Called on every step of the animation
-  __stepThroughDeceleration(render) {
-    const self = this;
+  __stepThroughDeceleration: function(render) {
+    var self = this;
 
-    let scrollTop = self.__scrollTop + self.__decelerationVelocityY;
+    var scrollTop = self.__scrollTop + self.__decelerationVelocityY;
 
-    const scrollTopFixed = Math.max(Math.min(self.__maxDecelerationScrollTop, scrollTop), self.__minDecelerationScrollTop);
+    var scrollTopFixed = Math.max(Math.min(self.__maxDecelerationScrollTop, scrollTop), self.__minDecelerationScrollTop);
     if (scrollTopFixed !== scrollTop) {
       scrollTop = scrollTopFixed;
       self.__decelerationVelocityY = 0;
@@ -498,7 +496,7 @@ const members = {
 };
 
 // Copy over members to prototype
-for (const key in members) {
+for (var key in members) {
   Scroller.prototype[key] = members[key];
 }
 

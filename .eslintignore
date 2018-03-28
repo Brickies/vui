@@ -1,4 +1,5 @@
-lib/
-dist/
-node_modules/
-build/**/*.js
+/build/
+/config/
+/examples/dist/
+/*.js
+/test/unit/coverage/

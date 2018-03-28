@@ -18,7 +18,7 @@
       ]
     },
     {
-      "name": "Vui组件",
+      "name": "Vui 组件",
       "showInMobile": true,
       "groups": [
         {
@@ -33,8 +33,8 @@
               "title": "Cell 单元格"
             },
             {
-              "path": "/select",
-              "title": "Select 选择器"
+              "path": "/icon",
+              "title": "Icon 图标"
             },
             {
               "path": "/search",
@@ -45,12 +45,12 @@
               "title": "SearchList 搜索列表"
             },
             {
-              "path": "/swiper",
-              "title": "Swiper 轮播"
+              "path": "/select",
+              "title": "Select 选择器"
             },
             {
-              "path": "/icon",
-              "title": "Icon 图标"
+              "path": "/swiper",
+              "title": "Swiper 轮播"
             }
           ]
         },
@@ -67,8 +67,8 @@
           "groupName": "操作反馈",
           "list": [
             {
-              "path": "/toast",
-              "title": "Toast 轻提示"
+              "path": "/picker",
+              "title": "Picker 选择器"
             },
             {
               "path": "/dialog",
@@ -79,17 +79,17 @@
               "title": "Scroller 下拉刷新上拉加载"
             },
             {
-              "path": "/picker",
-              "title": "Picker 选择器"
+              "path": "/toast",
+              "title": "Toast 轻提示"
             }
           ]
         },
         {
-          "groupName": "页面占位",
+          "groupName": "内容占位",
           "list": [
             {
-              "path": "/content-placeholder",
-              "title": "ContentPlaceholder 内容占位"
+              "path": "/skeleton",
+              "title": "Skeleton 占位"
             }
           ]
         }

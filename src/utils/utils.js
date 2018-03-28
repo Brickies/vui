@@ -1,4 +1,4 @@
-/* eslint-disable no-bitwise */
+/* eslint-disable */
 
 export default {
   isDateTimeString(str) {

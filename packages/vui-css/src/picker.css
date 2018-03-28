@@ -1,3 +1,5 @@
+@import './mixins/mask.css';
+
 $datetime-item-height: 38px;
 $datetime-item-height-3: 114px;
 $datetime-item-height-7: 266px;

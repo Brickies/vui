@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* istanbul ignore next */
 import Vue from 'vue';
 

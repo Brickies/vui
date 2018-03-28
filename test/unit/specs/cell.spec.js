@@ -1,16 +1,16 @@
-import Cell from 'packages/cell';
-import { mount } from 'avoriaz';
+import Cell from 'packages/cell'
+import { mount } from 'avoriaz'
 
 describe('Cell', () => {
-  let wrapper;
+  let wrapper
 
   afterEach(() => {
-    wrapper && wrapper.destroy();
-  });
+    wrapper && wrapper.destroy()
+  })
 
   it('create a cell with nothing', () => {
-    wrapper = mount(Cell);
+    wrapper = mount(Cell)
 
-    expect(wrapper.hasClass('v-cell')).to.be.true;
-  });
-});
+    expect(wrapper.hasClass('v-cell')).to.be.true
+  })
+})

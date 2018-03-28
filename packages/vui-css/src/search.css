@@ -16,13 +16,6 @@
     border-radius: 15px;
     font-size: 14px;
   }
-  .icon {
-    width: 14px;
-    height: 14px;
-    img {
-      width: 100%;
-    }
-  }
   &__icon {
     position: absolute;
     left: 15px;

@@ -22,14 +22,15 @@
  * rendering. This eases a lot of cases where it might be pretty complex to break down a state
  * based on the pure time difference.
  */
-const time = Date.now || function () {
+/* eslint-disable */
+var time = Date.now || function () {
   return +new Date();
 };
 
-let running = {};
-let counter = 1;
-const desiredFrames = 60;
-const millisecondsPerSecond = 1000;
+var running = {};
+var counter = 1;
+var desiredFrames = 60;
+var millisecondsPerSecond = 1000;
 
 module.exports = {
   /**
@@ -38,30 +39,30 @@ module.exports = {
    * @param callback {Function} The callback to be invoked before the next repaint.
    * @param root {HTMLElement} The root element for the repaint
    */
-  requestAnimationFrame: (() => {
+  requestAnimationFrame: (function() {
     // Check for request animation Frame support
-    const requestFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame;
-    let isNative = !!requestFrame;
+    var requestFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame;
+    var isNative = !!requestFrame;
 
     if (requestFrame && !/requestAnimationFrame\(\)\s*\{\s*\[native code\]\s*\}/i.test(requestFrame.toString())) {
       isNative = false;
     }
 
     if (isNative) {
-      return (callback, root) => {
+      return function (callback, root) {
         requestFrame(callback, root);
       };
     }
 
-    const TARGET_FPS = 60;
-    const requests = {};
-    let requestCount = 0;
-    let rafHandle = 1;
-    let intervalHandle = null;
-    let lastActive = +new Date();
+    var TARGET_FPS = 60;
+    var requests = {};
+    var requestCount = 0;
+    var rafHandle = 1;
+    var intervalHandle = null;
+    var lastActive = +new Date();
 
-    return (callback, root) => {
-      const callbackHandle = rafHandle++;
+    return function(callback, root) {
+      var callbackHandle = rafHandle++;
 
       // Store callback
       requests[callbackHandle] = callback;
@@ -69,15 +70,15 @@ module.exports = {
 
       // Create timeout at first request
       if (intervalHandle === null) {
-        intervalHandle = setInterval(() => {
-          const time = +new Date();
-          const currentRequests = requests;
+        intervalHandle = setInterval(function() {
+          var time = +new Date();
+          var currentRequests = requests;
           // Reset data structure before executing callbacks
           requests;
           requestCount = 0;
           /* eslint-disable no-restricted-syntax */
           /* eslint-disable guard-for-in */
-          for (const key in currentRequests) {
+          for (var key in currentRequests) {
             /* eslint-disable no-prototype-builtins */
             if (currentRequests.hasOwnProperty(key)) {
               currentRequests[key](time);
@@ -104,8 +105,8 @@ module.exports = {
    * @param id {Integer} Unique animation ID
    * @return {Boolean} Whether the animation was stopped (aka, was running before)
    */
-  stop(id) {
-    const cleared = running[id] != null;
+  stop: function(id) {
+    var cleared = running[id] != null;
     if (cleared) {
       running[id] = null;
     }
@@ -118,7 +119,7 @@ module.exports = {
    * @param id {Integer} Unique animation ID
    * @return {Boolean} Whether the animation is still running
    */
-  isRunning(id) {
+  isRunning: function(id) {
     return running[id] != null;
   },
 
@@ -130,7 +131,7 @@ module.exports = {
    *   Signature of the method should be `function(percent, now, virtual) { return continueWithAnimation; }`
    * @param verifyCallback {Function} Executed before every animation step.
    *   Signature of the method should be `function() { return continueWithAnimation; }`
-   * @param completedCallback {Function}
+   * @param compvaredCallback {Function}
    *   Signature of the method should be `function(droppedFrames, finishedAnimation) {}`
    * @param duration {Integer} Milliseconds to run the animation
    * @param easingMethod {Function} Pointer to easing function
@@ -139,13 +140,13 @@ module.exports = {
    *   usage of requestAnimationFrame.
    * @return {Integer} Identifier of animation. Can be used to stop it any time.
    */
-  start(stepCallback, verifyCallback, completedCallback, duration, easingMethod, root) {
-    const _this = this;
-    const start = time();
-    let lastFrame = start;
-    let percent = 0;
-    let dropCounter = 0;
-    const id = counter++;
+  start: function(stepCallback, verifyCallback, compvaredCallback, duration, easingMethod, root) {
+    var _this = this;
+    var start = time();
+    var lastFrame = start;
+    var percent = 0;
+    var dropCounter = 0;
+    var id = counter++;
 
     if (!root) {
       root = document.body;
@@ -153,36 +154,36 @@ module.exports = {
 
     // Compacting running db automatically every few new animations
     if (id % 20 === 0) {
-      const newRunning = {};
+      var newRunning = {};
       /* eslint-disable no-restricted-syntax */
       /* eslint-disable guard-for-in */
-      for (const usedId in running) {
+      for (var usedId in running) {
         newRunning[usedId] = true;
       }
       running = newRunning;
     }
 
     // This is the internal step method which is called every few milliseconds
-    const step = (virtual) => {
+    var step = function(virtual) {
       // Normalize virtual value
-      const render = virtual !== true;
+      var render = virtual !== true;
 
       // Get current time
-      const now = time();
+      var now = time();
 
       // Verification is executed before next animation step
       if (!running[id] || (verifyCallback && !verifyCallback(id))) {
         running[id] = null;
-        completedCallback && completedCallback(desiredFrames - (dropCounter / ((now - start) / millisecondsPerSecond)), id, false);
+        compvaredCallback && compvaredCallback(desiredFrames - (dropCounter / ((now - start) / millisecondsPerSecond)), id, false);
         return;
       }
 
-      // For the current rendering to apply let's update omitted steps in memory.
+      // For the current rendering to apply var's update omitted steps in memory.
       // This is important to bring internal state variables up-to-date with progress in time.
       if (render) {
-        const droppedFrames = Math.round((now - lastFrame) / (millisecondsPerSecond / desiredFrames)) - 1;
+        var droppedFrames = Math.round((now - lastFrame) / (millisecondsPerSecond / desiredFrames)) - 1;
 
-        for (let j = 0; j < Math.min(droppedFrames, 4); j++) {
+        for (var j = 0; j < Math.min(droppedFrames, 4); j++) {
           step(true);
 
           dropCounter++;
@@ -198,10 +199,10 @@ module.exports = {
       }
 
       // Execute step callback, then...
-      const value = easingMethod ? easingMethod(percent) : percent;
+      var value = easingMethod ? easingMethod(percent) : percent;
       if ((stepCallback(value, now, render) === false || percent === 1) && render) {
         running[id] = null;
-        completedCallback && completedCallback(desiredFrames - (dropCounter / ((now - start) / millisecondsPerSecond)), id, percent === 1 || duration == null);
+        compvaredCallback && compvaredCallback(desiredFrames - (dropCounter / ((now - start) / millisecondsPerSecond)), id, percent === 1 || duration == null);
       } else if (render) {
         lastFrame = now;
         _this.requestAnimationFrame(step, root);

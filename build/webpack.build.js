@@ -1,16 +1,16 @@
-var webpack = require('webpack');
-var getPostcssPlugin = require('./utils/postcss_pipe');
-var config = require('./webpack.config.js');
+'use strict'
+const webpack = require('webpack')
+const config = require('./webpack.base.conf')
 
 config.entry = {
   'vui': './src/index.js'
-};
+}
 
 config.output = {
   filename: './lib/[name].js',
   library: 'vui',
   libraryTarget: 'umd'
-};
+}
 
 config.externals = {
   vue: {
@@ -19,30 +19,14 @@ config.externals = {
     commonjs2: 'vue',
     amd: 'vue'
   }
-};
+}
 
 config.plugins = [
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': '"production"'
-  }),
-  new webpack.LoaderOptionsPlugin({
-    minimize: true,
-    debug: false,
-    options: {
-      postcss: getPostcssPlugin,
-      babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime', 'transform-vue-jsx']
-      },
-      vue: {
-        autoprefixer: false,
-        preserveWhitespace: false,
-        postcss: getPostcssPlugin
-      }
-    }
+    'process.env': require('../config/prod.env')
   })
-];
+]
 
-delete config.devtool;
+delete config.devtool
 
-module.exports = config;
+module.exports = config

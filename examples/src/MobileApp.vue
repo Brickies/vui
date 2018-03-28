@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 
   body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, iframe {
     margin: 0;
@@ -77,10 +77,13 @@ export default {
   }
 
   .mobile-container {
+    max-width: 800px;
+    margin: 0 auto;
     height: 100%;
     overflow: auto;
     background: #f8f8f8;
     position: relative;
+    box-shadow: 0 0 20px 0 #999;
     -webkit-overflow-scrolling: touch;
   }
 

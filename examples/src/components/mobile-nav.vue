@@ -39,7 +39,6 @@ export default {
     },
     base: String
   },
-
   data() {
     return {
       isOpen: false
@@ -48,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 @component-namespace mobile {
   @b nav-group {
     border-radius: 2px;
@@ -117,5 +116,4 @@ export default {
     }
   }
 }
-
 </style>

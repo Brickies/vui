@@ -1,69 +1,65 @@
 import { version } from '../package.json'
-import Switch from '../packages/switch/index.js';
-import Select from '../packages/select/index.js';
-import Search from '../packages/search/index.js';
-import SearchList from '../packages/search-list/index.js';
-import Swipe from '../packages/swipe/index.js';
-import SwipeItem from '../packages/swipe-item/index.js';
-import Swiper from '../packages/swiper/index.js';
-import Scroller from '../packages/scroller/index.js';
-import Dialog from '../packages/dialog/src/dialog.vue';
-import Picker from '../packages/picker/index.js';
-import Placeholder from '../packages/content-placeholder/index.js';
-import Icon from '../packages/icon/index.js';
-import Button from '../packages/button/index.js';
-import Cell from '../packages/cell/index.js';
-import CellGroup from '../packages/cell-group/index.js';
-import $Toast from '../packages/toast/index.js';
-import $Dialog from '../packages/dialog/index.js';
+import Button from '../packages/button'
+import Cell from '../packages/cell'
+import CellGroup from '../packages/cell-group'
+import Icon from '../packages/icon'
+import Dialog from '../packages/dialog'
+import Picker from '../packages/picker'
+import Scroller from '../packages/scroller'
+import Search from '../packages/search'
+import SearchList from '../packages/search-list'
+import Select from '../packages/select'
+import Swipe from '../packages/swiper/swipe'
+import SwipeItem from '../packages/swiper/swipe-item'
+import Swiper from '../packages/swiper'
+import Switch from '../packages/switch'
+import Skeleton from '../packages/skeleton'
+import $Dialog from '../packages/dialog/dialog.js'
+import $Toast from '../packages/toast/toast.js'
 
-const install = function(Vue) {
-  if (install.installed) return;
+const install = function (Vue) {
+  if (install.installed) return
 
-  Vue.component(Switch.name, Switch);
-  Vue.component(Select.name, Select);
-  Vue.component(Search.name, Search);
-  Vue.component(SearchList.name, SearchList);
-  Vue.component(Swipe.name, Swipe);
-  Vue.component(SwipeItem.name, SwipeItem);
-  Vue.component(Swiper.name, Swiper);
-  Vue.component(Scroller.name, Scroller);
-  Vue.component(Dialog.name, Dialog);
-  Vue.component(Picker.name, Picker);
-  Vue.component(Placeholder.ContentPlaceholder.name, Placeholder.ContentPlaceholder);
-  Vue.component(Icon.name, Icon);
-  Vue.component(Button.name, Button);
-  Vue.component(Cell.name, Cell);
-  Vue.component(CellGroup.name, CellGroup);
+  Vue.component(Button.name, Button)
+  Vue.component(Cell.name, Cell)
+  Vue.component(CellGroup.name, CellGroup)
+  Vue.component(Icon.name, Icon)
+  Vue.component(Dialog.name, Dialog)
+  Vue.component(Picker.name, Picker)
+  Vue.component(Scroller.name, Scroller)
+  Vue.component(Search.name, Search)
+  Vue.component(SearchList.name, SearchList)
+  Vue.component(Select.name, Select)
+  Vue.component(Swipe.name, Swipe)
+  Vue.component(SwipeItem.name, SwipeItem)
+  Vue.component(Swiper.name, Swiper)
+  Vue.component(Switch.name, Switch)
+  Vue.component(Skeleton.name, Skeleton)
 
-  Vue.prototype.$toast = $Toast;
-  Vue.prototype.$dialog = $Dialog;
-  Vue.use(Placeholder.directive)
-};
+  Vue.prototype.$dialog = $Dialog
+  Vue.prototype.$toast = $Toast
+}
 
 // auto install
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+  install(window.Vue)
 }
 
-module.exports = {
+export default {
   install,
   version,
-  Switch,
-  Select,
-  Search,
-  SearchList,
-  Swipe,
-  SwipeItem,
-  Swiper,
-  Scroller,
-  Dialog,
-  Picker,
-  Placeholder,
-  Icon,
   Button,
   Cell,
   CellGroup,
-  $Toast,
-  $Dialog
-};
+  Icon,
+  Dialog,
+  Picker,
+  Scroller,
+  Search,
+  SearchList,
+  Select,
+  Switch,
+  Skeleton,
+  $Dialog,
+  $Toast
+}
