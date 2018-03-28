@@ -5,13 +5,9 @@
 }
 .example-block {
   padding: 0;
-  /* .datetime-input {
-    display: inline;
+  .v-switch {
+    float: right;
   }
-  .demo-sub-title {
-    font-size: 14px;
-    padding-left: 20px !important;
-  } */
 }
 </style>
 
@@ -20,30 +16,20 @@
     <h1 class="demo-title">Switch 开关</h1>
     <example-block title="date 日期选择器">
       <v-cell-group>
-        <v-cell title="cell 单元格" value="内容"></v-cell>
-        <v-cell title="date 日期选择器">
+         <v-cell :title="'默认switch，值：' + val1">
           <v-switch v-model="val1"></v-switch>
+        </v-cell>
+        <v-cell :title="'设置宽高，默认选中，值：' + val2">
+          <v-switch v-model="val2"></v-switch>
+        </v-cell>
+         <v-cell :title="'禁止点击，值：' + val3">
+          <v-switch v-model="val3" :disabled="true"></v-switch>
+        </v-cell>
+         <v-cell :title="'禁止点击，默认选中，值：' + val4">
+          <v-switch v-model="val4" :disabled="true"></v-switch>
         </v-cell>
       </v-cell-group>
     </example-block>
-    <ul class='v-list'>
-      <li>
-        <label>默认switch，值：{{val1}}</label>
-        <div></div>
-      </li>
-      <li>
-        <label>设置宽高，默认选中，值：{{val2}}</label>
-        <div><v-switch @change="handleChange" v-model="val2" width="50" height="30"></v-switch></div>
-      </li>
-      <li>
-        <label>禁止点击，值：{{val3}}</label>
-        <div><v-switch :disabled="true"></v-switch></div>
-      </li>
-      <li>
-        <label>禁止点击，默认选中，值：{{val4}}</label>
-        <div><v-switch :disabled="true" v-model="val4"></v-switch></div>
-      </li>
-    </ul>
   </div>
 </template>
 <script>

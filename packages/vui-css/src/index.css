@@ -7,6 +7,7 @@
 @import './common/reset.css';
 @import './common/var.css';
 
+@import './revert.css';
 @import './button.css';
 @import './cell.css';
 @import './cell-group.css';
