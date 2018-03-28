@@ -64,6 +64,7 @@
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
     "child_process": "^1.0.2",
+    "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.0.1",
     "cp-cli": "^1.1.0",
     "cross-env": "^5.0.1",

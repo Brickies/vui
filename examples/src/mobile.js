@@ -20,7 +20,7 @@ routesConfig.push({
   component: DemoList
 })
 const router = new VueRouter({
-  base: isProduction ? '/vui/' : __dirname,
+  base: isProduction ? '/' : __dirname,
   routes: routesConfig
 })
 console.log(isMobile)
@@ -28,7 +28,7 @@ router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0)
   }
-  const pathname = isProduction ? '/vui/' : '/'
+  const pathname = '/'
   if (!isMobile) {
     window.location.replace(pathname)
     return
