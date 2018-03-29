@@ -11,7 +11,8 @@ DialogConstructor.prototype.closeDialog = function (stay, callback) {
   this.$emit('update:show', false)
   var el = instance.$el
   el.parentNode && el.parentNode.removeChild(el)
-  document.getElementsByTagName('html')[0].style.overflow = 'initial'
+  document.body.classList.remove('v-dialog__overflow-hidden')
+  // document.getElementsByTagName('html')[0].style.overflow = 'initial'
 }
 
 var Dialog = function (options) {
@@ -25,7 +26,8 @@ var Dialog = function (options) {
   instance.showCloseIcon = options.showCloseIcon || true
   instance.show = true
   document.body.appendChild(instance.$el)
-  document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+  document.body.classList.add('v-dialog__overflow-hidden')
+  // document.getElementsByTagName('html')[0].style.overflow = 'hidden !important'
 }
 
 export default Dialog

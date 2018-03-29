@@ -23,8 +23,8 @@ const registerRoute = (navConfig, isMobile) => {
 
   function addRoute (page) {
     const component = isMobile
-      ? require(`../pages${page.path}.vue`)
-      : require(`../docs${page.path}.md`)
+      ? () => import(`../pages${page.path}.vue`)
+      : () => import(`../docs${page.path}.md`)
     route.push({
       path: '/component' + page.path,
       component: component.default || component

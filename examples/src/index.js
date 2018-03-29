@@ -18,11 +18,11 @@ const routesConfig = registerRoute(navConfig)
 const isProduction = process.env.NODE_ENV === 'production'
 routesConfig.push({
   path: '/',
-  redirect: '/component/button'
+  redirect: '/component/intro'
 })
 routesConfig.push({
   path: '/component',
-  redirect: '/component/button'
+  redirect: '/component/intro'
 })
 
 const router = new VueRouter({

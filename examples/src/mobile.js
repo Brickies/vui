@@ -5,10 +5,11 @@ import registerRoute from './router.config'
 import navConfig from './nav.config'
 import Vui from 'src/index'
 import isMobile from './is-mobile.js'
-
 import 'packages/vui-css/src/index.css'
-
 import DemoList from './components/demo-list.vue'
+import ExampleBlock from './components/example-block'
+
+Vue.component('example-block', ExampleBlock)
 
 Vue.use(Vui)
 Vue.use(VueRouter)
