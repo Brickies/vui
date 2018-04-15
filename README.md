@@ -8,7 +8,7 @@
 
 **请扫描以下二维码**
 
-![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/qrcode.png)
+![](https://raw.githubusercontent.com/Brickies/vui/dev/examples/assets/qrcode.jpg)
 
 ## 安装
 
