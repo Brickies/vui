@@ -46,7 +46,7 @@ const examplesFiles = [
     content: `
 <template>
   <section class="demo-${componentname}">
-      <v-${componentname}></v-${componentname}>
+    <v-${componentname}></v-${componentname}>
   </section>
 </template>`
   }
