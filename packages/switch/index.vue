@@ -51,7 +51,7 @@ export default {
   computed: {
     pheight () {
       if (!this.height) {
-        return ~~this.width/2
+        return ~~this.width / 2
       } else {
         return ~~this.height
       }
@@ -63,10 +63,10 @@ export default {
       return ~~this.pheight + 'px'
     },
     transform() {
-      return this.currentVal ? `translate3d(${ ~~this.width - ~~this.pheight }px, 0, 0)` : '';
+      return this.currentVal ? `translate3d(${ ~~this.width - ~~this.pheight }px, 0, 0)` : ''
     },
     bgColor () {
-      return this.currentVal ? this.activeColor : this.inactiveColor;
+      return this.currentVal ? this.activeColor : this.inactiveColor
     },
     currentVal: {
       get () {
