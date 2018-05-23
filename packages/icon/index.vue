@@ -19,7 +19,7 @@ export default {
     fontUnit: {
       type: String,
       validator (val) {
-        return ['px', 'rem', 'em', '%', 'pt', 'pc', 'in', 'cm', 'mm', 'ex', 'vw', 'vh'].indexOf(val) > -1;
+        return ['px', 'rem', 'em', '%', 'pt', 'pc', 'in', 'cm', 'mm', 'ex', 'vw', 'vh'].indexOf(val) > -1
       },
       default: 'px'
     },
