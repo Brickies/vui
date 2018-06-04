@@ -1,6 +1,6 @@
 <template>
-  <i :class="['v-icon', `v-icon-${name}`]" :style="getStyle">
-    <slot></slot>
+  <i :class="['v-icon', `v-icon-${name}`]" :style="getStyle" @click="handleClick">
+    <slot />
   </i>
 </template>
 
@@ -31,6 +31,11 @@ export default {
       this.size && (style.fontSize = this.size + this.fontUnit)
       this.color && (style.color = this.color)
       return style
+    }
+  },
+  methods: {
+    handleClick () {
+      this.$emit('click')
     }
   }
 }
