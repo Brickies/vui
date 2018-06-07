@@ -60,6 +60,10 @@
             {
               "path": "/switch",
               "title": "Switch 开关"
+            },
+            {
+              "path": "/radio",
+              "title": "Radio 单选框"
             }
           ]
         },

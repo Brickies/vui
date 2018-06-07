@@ -12,5 +12,7 @@
   "swiper": "./packages/swiper/index.js",
   "switch": "./packages/switch/index.js",
   "toast": "./packages/toast/index.js",
-  "skeleton": "./packages/skeleton/index.js"
+  "skeleton": "./packages/skeleton/index.js",
+  "radio-group": "./packages/radio-group/index.js",
+  "radio": "./packages/radio/index.js"
 }

@@ -1,0 +1,52 @@
+@import "./common/var.css";
+$v-radio-size: 22px;
+
+.v-radio {
+  overflow: hidden;
+  user-select: none;
+
+  &__input,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__input {
+    position: relative;
+    height: $v-radio-size;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__label {
+    line-height: $v-radio-size;
+    margin-left: 5px;
+  }
+
+  .v-icon {
+    pointer-events: none;
+  }
+
+  .v-icon-checked {
+    color: $green;
+  }
+
+  .v-icon-check {
+    color: $gray-dark;
+  }
+  &--disabled {
+    .v-icon {
+      color: $gray-light;
+      border-radius: 50%;
+      background-color: $bg-color;
+    }
+  }
+}

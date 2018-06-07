@@ -11,7 +11,7 @@ h2 {
   font-size: 24px;
 }
 .demo-button .v-button--large, .demo-button .v-button--block {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 </style>
 <template>

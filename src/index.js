@@ -14,6 +14,8 @@ import SwipeItem from '../packages/swiper/swipe-item'
 import Swiper from '../packages/swiper'
 import Switch from '../packages/switch'
 import Skeleton from '../packages/skeleton'
+import Radio from '../packages/radio'
+import RadioGroup from '../packages/radio-group'
 import $Dialog from '../packages/dialog/dialog.js'
 import $Toast from '../packages/toast/toast.js'
 
@@ -35,6 +37,8 @@ const install = function (Vue) {
   Vue.component(Swiper.name, Swiper)
   Vue.component(Switch.name, Switch)
   Vue.component(Skeleton.name, Skeleton)
+  Vue.component(Radio.name, Radio)
+  Vue.component(RadioGroup.name, RadioGroup)
 
   Vue.prototype.$dialog = $Dialog
   Vue.prototype.$toast = $Toast
@@ -60,6 +64,8 @@ export default {
   Select,
   Switch,
   Skeleton,
+  Radio,
+  RadioGroup,
   $Dialog,
   $Toast
 }
