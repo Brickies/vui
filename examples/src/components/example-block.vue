@@ -10,7 +10,7 @@ export default {
   props: {
     title: String
   }
-};
+}
 </script>
 <style>
 .example-block {

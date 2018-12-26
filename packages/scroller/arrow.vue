@@ -77,12 +77,12 @@
     </svg>
 </template>
 <script>
-  export default {
-    props: {
-      fillColor: {
-        type: String,
-        default: '#AAA'
-      }
+export default {
+  props: {
+    fillColor: {
+      type: String,
+      default: '#AAA'
     }
   }
+}
 </script>

@@ -41,7 +41,7 @@ export default {
   data () {
     return {
       // closeImgSrc: require('packages/vui-css/assets/close.png'),
-    };
-  },
-};
+    }
+  }
+}
 </script>

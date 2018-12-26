@@ -18,12 +18,12 @@ export default {
       default: 2000
     },
     callback: Function,
-    icon: String,
+    icon: String
   },
-  data() {
+  data () {
     return {
       show: true
-    };
+    }
   },
   mounted () {
     // setTimeout(() => {
@@ -31,5 +31,5 @@ export default {
     //   this.$el.remove()
     // }, this.timeout)
   }
-};
+}
 </script>

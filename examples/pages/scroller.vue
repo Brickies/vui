@@ -29,7 +29,7 @@ li {
 export default {
   data () {
     return {
-      len: 6,
+      len: 6
     }
   },
   computed: {

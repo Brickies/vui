@@ -70,15 +70,15 @@ export default {
         },
         {
           height: '15px',
-          boxes: [{box: '100%'}]
+          boxes: [{ box: '100%' }]
         },
         {
           height: '30px',
-          boxes: [{width: '55%'}, {box: '25%'}, '20%']
+          boxes: [{ width: '55%' }, { box: '25%' }, '20%']
         },
         {
           height: '15px',
-          boxes: [{box: '100%'}]
+          boxes: [{ box: '100%' }]
         },
         {
           height: '15px',
@@ -86,41 +86,42 @@ export default {
         },
         {
           height: '15px',
-          boxes: [{box: '100%'}]
+          boxes: [{ box: '100%' }]
         },
         {
           height: '100px',
-          boxes: ['160px', {box: '10%'}, {width: 'calc(90% - 160px)', rows: [
-            {
-              height: '10px',
-              boxes: [{box: '100%'}]
-            },
-            {
-              height: '20px'
-            },
-            {
-              height: '10px',
-              boxes: [{box: '100%'}]
-            },
-            {
-              height: '20px'
-            },
-            {
-              height: '10px',
-              boxes: [{box: '100%'}]
-            },
-            {
-              height: '20px'
-            },
-            {
-              height: '10px',
-              boxes: [{box: '100%'}]
-            }
-          ]}]
+          boxes: ['160px', { box: '10%' }, { width: 'calc(90% - 160px)',
+            rows: [
+              {
+                height: '10px',
+                boxes: [{ box: '100%' }]
+              },
+              {
+                height: '20px'
+              },
+              {
+                height: '10px',
+                boxes: [{ box: '100%' }]
+              },
+              {
+                height: '20px'
+              },
+              {
+                height: '10px',
+                boxes: [{ box: '100%' }]
+              },
+              {
+                height: '20px'
+              },
+              {
+                height: '10px',
+                boxes: [{ box: '100%' }]
+              }
+            ] }]
         },
         {
           height: '15px',
-          boxes: [{box: '100%'}]
+          boxes: [{ box: '100%' }]
         },
         {
           height: '208px'

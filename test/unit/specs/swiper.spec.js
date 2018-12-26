@@ -1,5 +1,6 @@
 import Swiper from 'packages/swiper'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Swiper', () => {
   let wrapper

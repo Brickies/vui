@@ -25,7 +25,7 @@ export default {
     },
     size: {
       type: String,
-      default: "250%"
+      default: '250%'
     },
     padding: {
       type: String,
@@ -38,5 +38,5 @@ export default {
   destroyed () {
     document.getElementsByTagName('html')[0].style.overflow = 'initial'
   }
-};
+}
 </script>

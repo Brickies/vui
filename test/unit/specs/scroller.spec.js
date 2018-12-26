@@ -1,5 +1,6 @@
 import Scroller from 'packages/scroller'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Scroller', () => {
   let wrapper

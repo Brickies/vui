@@ -1,5 +1,6 @@
 import Button from 'packages/button'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Button', () => {
   let wrapper

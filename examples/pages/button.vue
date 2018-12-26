@@ -48,7 +48,7 @@ h2 {
 export default {
   methods: {
     clickFn (a) {
-      console.log(123, a);
+      console.log(123, a)
     }
   }
 }

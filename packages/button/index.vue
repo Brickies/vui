@@ -23,15 +23,15 @@ export default {
   name: 'v-button',
   props: {
     type: {
-      validator(v) {
-        return ['default', 'primary', 'warn'].indexOf(v) > -1;
+      validator (v) {
+        return ['default', 'primary', 'warn'].indexOf(v) > -1
       },
       default: 'default',
       required: false
     },
     size: {
-      validator(v) {
-        return ['normal', 'large', 'middle', 'small'].indexOf(v) > -1;
+      validator (v) {
+        return ['normal', 'large', 'middle', 'small'].indexOf(v) > -1
       },
       default: 'normal',
       required: false

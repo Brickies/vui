@@ -13,6 +13,7 @@
         <template v-for="navItem in group.list">
           <li
             class="mobile-nav-group__title"
+            :key="navItem.path"
             v-if="!navItem.disabled">
             <router-link
               active-class="active"
@@ -34,17 +35,17 @@ export default {
     group: {
       type: Object,
       default: () => {
-        return [];
+        return []
       }
     },
     base: String
   },
-  data() {
+  data () {
     return {
       isOpen: false
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="postcss">

@@ -7,47 +7,47 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default {
   computed: {
-    visible() {
-      return ['/'].indexOf(this.$route.path) < 0;
+    visible () {
+      return ['/'].indexOf(this.$route.path) < 0
     }
   },
 
-  data() {
+  data () {
     return {
       isFooterFixed: false
-    };
+    }
   },
 
-  mounted() {
-    this.computeFooterFixed();
+  mounted () {
+    this.computeFooterFixed()
   },
 
   watch: {
-    '$route.path': function(val) {
+    '$route.path': function (val) {
       Vue.nextTick(() => {
-        this.computeFooterFixed();
-      });
+        this.computeFooterFixed()
+      })
     }
   },
 
   methods: {
-    computeFooterFixed() {
+    computeFooterFixed () {
       if (this.$refs.container) {
-        const demoSize = this.$refs.demo.getBoundingClientRect();
-        const containerSize = this.$refs.container.getBoundingClientRect();
+        const demoSize = this.$refs.demo.getBoundingClientRect()
+        const containerSize = this.$refs.container.getBoundingClientRect()
         if (demoSize.height < containerSize.height - 54) {
-          this.isFooterFixed = true;
-          return;
+          this.isFooterFixed = true
+          return
         }
       }
-      this.isFooterFixed = false;
+      this.isFooterFixed = false
     }
   }
-};
+}
 </script>
 
 <style lang="postcss">

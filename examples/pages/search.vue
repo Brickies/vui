@@ -1,4 +1,4 @@
-<style scoped>
+<style lang="postcss" scoped>
 .search-page {
   padding: 0 10px;
   margin-top: 10px;
@@ -53,74 +53,72 @@ export default {
       keyword: '',
       visible: false,
       defaultResult: [
-        {name: 'Apple', price: 5, amount: 20},
-        {name: 'Banana', price: 5, amount: 30},
-        {name: 'Orange', price: 3, amount: 10},
-        {name: 'Durian', price: 10, amount: 25},
-        {name: 'Lemon', price: 4, amount: 30},
-        {name: 'Peach', price: 5, amount: 40},
-        {name: 'Cherry', price: 20, amount: 50},
-        {name: 'Berry', price: 15, amount: 60},
-        {name: 'Core', price: 10, amount: 21},
-        {name: 'Fig', price: 10, amount: 22},
-        {name: 'Haw', price: 10, amount: 23},
-        {name: 'Melon', price: 10, amount: 24},
-        {name: 'Plum', price: 10, amount: 25},
-        {name: 'Pear', price: 10, amount: 26},
-        {name: 'Peanut', price: 10, amount: 27},
-        {name: 'Other'}
-      ],
-      // 防止defaultResult值被污染
-      copy: []
+        { name: 'Apple', price: 5, amount: 20 },
+        { name: 'Banana', price: 5, amount: 30 },
+        { name: 'Orange', price: 3, amount: 10 },
+        { name: 'Durian', price: 10, amount: 25 },
+        { name: 'Lemon', price: 4, amount: 30 },
+        { name: 'Peach', price: 5, amount: 40 },
+        { name: 'Cherry', price: 20, amount: 50 },
+        { name: 'Berry', price: 15, amount: 60 },
+        { name: 'Core', price: 10, amount: 21 },
+        { name: 'Fig', price: 10, amount: 22 },
+        { name: 'Haw', price: 10, amount: 23 },
+        { name: 'Melon', price: 10, amount: 24 },
+        { name: 'Plum', price: 10, amount: 25 },
+        { name: 'Pear', price: 10, amount: 26 },
+        { name: 'Peanut', price: 10, amount: 27 },
+        { name: 'Other' }
+      ]
     }
   },
   watch: {
     keyword (val) {
       if (!val) {
-        this.visible = false;
+        this.visible = false
       }
     }
   },
   methods: {
     searchFn (query) {
-      this.keyword = query;
-      this.visible = true;
+      this.keyword = query
+      this.visible = true
       console.log('search', query)
     },
     searchEnter (query) {
-      this.keyword = query;
+      this.keyword = query
       console.log('enter', query)
     },
     closeFn (query) {
-      this.keyword = query;
+      this.keyword = query
       console.log('close', query)
     },
     listSearch (index) {
-      this.visible = false;
+      this.visible = false
       console.log(index, this.defaultResult[index].name)
     }
   },
   computed: {
-    filterResult() {
+    filterResult () {
       // i 忽略大小写
-      let result = this.defaultResult.filter(item => new RegExp(this.keyword, 'i').test(item.name));
+      let result = this.defaultResult.filter(item => new RegExp(this.keyword, 'i').test(item.name))
       // 关键字高亮匹配
-      this.copy = JSON.parse(JSON.stringify(result))
-      this.copy.forEach((item, index) => {
-        let name = item.name, word = this.keyword;
-        name = name.toLowerCase();
-        word = word.toLowerCase();
+      let copy = JSON.parse(JSON.stringify(result))
+      copy.forEach((item, index) => {
+        let name = item.name; let word = this.keyword
+        name = name.toLowerCase()
+        word = word.toLowerCase()
 
         if (word && name.indexOf(word) !== -1) {
-          let arr    = item.name.split('')
-          let i      = name.indexOf(word);
-          let len    = word.length;
-          let active = '<span class="price">' + arr.splice(i, len).join('') + '</span>';
-          arr.splice(i, 0, active);
-          item.name  = arr.join('');
+          let arr = item.name.split('')
+          let i = name.indexOf(word)
+          let len = word.length
+          let active = '<span class="price">' + arr.splice(i, len).join('') + '</span>'
+          arr.splice(i, 0, active)
+          item.name = arr.join('')
         }
       })
-      return this.copy;
+      return copy
     }
   }
 }

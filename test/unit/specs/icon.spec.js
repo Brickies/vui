@@ -1,5 +1,6 @@
 import Icon from 'packages/icon'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Icon', () => {
   let wrapper

@@ -1,5 +1,6 @@
 import CellGroup from 'packages/cell-group'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('CellGroup', () => {
   let wrapper

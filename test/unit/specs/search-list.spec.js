@@ -1,5 +1,6 @@
 import SearchList from 'packages/search-list'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('SearchList', () => {
   let wrapper

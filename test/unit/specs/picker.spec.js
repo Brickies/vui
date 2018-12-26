@@ -1,5 +1,6 @@
 import Picker from 'packages/picker'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Picker', () => {
   let wrapper

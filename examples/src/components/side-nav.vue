@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <ul>
-      <li class="nav-item" v-for="item in data">
+      <li class="nav-item" v-for="item in data" :key="item.path">
         <a href="javascript:void(0)" v-if="!item.path" @click="handleTitleClick(item)">{{ item.name }}</a>
         <router-link
           v-else
@@ -10,7 +10,7 @@
           exact
           v-text="item.title || item.name" />
         <ul class="pure-menu-list sub-nav" v-if="item.children">
-          <li class="nav-item" v-for="navItem in item.children">
+          <li class="nav-item" v-for="navItem in item.children" :key="navItem.path">
             <router-link
               active-class="active"
               :to="base + navItem.path"
@@ -18,13 +18,13 @@
           </li>
         </ul>
         <template v-if="item.groups">
-          <div class="nav-group" v-for="group in item.groups">
+          <div class="nav-group" v-for="group in item.groups" :key="group.groupName">
             <div class="nav-group__title">{{ group.groupName }}</div>
             <ul class="pure-menu-list">
               <template v-for="navItem in group.list">
                 <li
                   class="nav-item"
-                  v-if="!navItem.disabled">
+                  v-if="!navItem.disabled" :key="navItem.path">
                   <router-link
                     active-class="active"
                     :to="base + navItem.path"
@@ -50,10 +50,10 @@ export default {
   },
 
   methods: {
-    handleTitleClick(item) {
-      const firstGroup = item.groups && item.groups[0];
+    handleTitleClick (item) {
+      const firstGroup = item.groups && item.groups[0]
       if (firstGroup && firstGroup.list && firstGroup.list.length !== 0) {
-        return this.$router.replace(this.base + firstGroup.list[0].path);
+        return this.$router.replace(this.base + firstGroup.list[0].path)
       }
     }
   }

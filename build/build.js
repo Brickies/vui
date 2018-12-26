@@ -8,13 +8,12 @@ const rm = require('rimraf')
 const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
-const config = require('../config')
-const webpackConfig = require('./webpack.build.min')
+const webpackConfig = require('../node_modules/@vue/cli-service/webpack.config.js')
 
 const spinner = ora('building for production...')
 spinner.start()
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(path.resolve(__dirname, '../dist'), 'static'), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()

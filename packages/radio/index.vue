@@ -60,7 +60,7 @@ export default {
         }
       }
     },
-    isDisabled() {
+    isDisabled () {
       return this.parent
         ? this.parent.disabled || this.disabled
         : this.disabled

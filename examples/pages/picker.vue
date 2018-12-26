@@ -41,7 +41,7 @@
     <example-block title="datetime 日期与时间选择器">
       <v-cell-group>
         <v-cell title="datetime 日期与时间选择器" is-link>
-					<v-picker title="选择日期与时间" placeholder="请选择日期与时间" v-model="now_datetime" :timeStep="20" type="datetime"></v-picker>
+          <v-picker title="选择日期与时间" placeholder="请选择日期与时间" v-model="now_datetime" :timeStep="20" type="datetime"></v-picker>
         </v-cell>
       </v-cell-group>
     </example-block>
@@ -52,24 +52,24 @@
         </v-cell>
       </v-cell-group>
     </example-block>
-	</div>
+  </div>
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       gender: {
         default: -1,
         value: [
-          { name: "保密", value: 0 },
-          { name: "男", value: 1 },
-          { name: "女", value: 2 }
+          { name: '保密', value: 0 },
+          { name: '男', value: 1 },
+          { name: '女', value: 2 }
         ]
       },
       now_date: null,
       now_time: null,
       now_datetime: null // new Date().getTime()/1000
-    };
+    }
   }
-};
+}
 </script>

@@ -58,10 +58,6 @@ export default {
       type: Boolean,
       default: true
     },
-    auto: {
-      type: Number,
-      default: 0
-    },
     styles: {
       type: Object,
       default: function () {
@@ -79,13 +75,13 @@ export default {
   },
   computed: {
     title () {
-      return `${this.currentThumIndex+1}/${this.items.length}`
+      return `${this.currentThumIndex + 1}/${this.items.length}`
     }
   },
   methods: {
     swiperClick () {
       if (this.type === 'swiper') {
-        return
+
       } else if (this.type === 'thum') {
         this.showThum = true
         this.currentThumIndex = this.currentIndex

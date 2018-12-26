@@ -24,7 +24,6 @@ routesConfig.push({
   path: '/component',
   redirect: '/component/intro'
 })
-
 const router = new VueRouter({
   base: isProduction ? '/' : __dirname,
   routes: routesConfig

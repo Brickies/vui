@@ -1,5 +1,6 @@
 import SwipeItem from 'packages/swiper/swipe-item'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('SwipeItem', () => {
   let wrapper
