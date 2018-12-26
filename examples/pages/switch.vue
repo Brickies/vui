@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     handleChange (val, oldVal) {
-      console.log(val, oldVal);
+      console.log(val, oldVal)
     }
   }
 }

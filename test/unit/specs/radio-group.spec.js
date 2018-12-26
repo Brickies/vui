@@ -1,5 +1,6 @@
 import { createTest, destroyVM } from '../util'
 import RadioGroup from 'packages/radio-group'
+import { expect } from 'chai'
 
 describe('RadioGroup', () => {
   let vm

@@ -21,25 +21,25 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       // version: window._global.version,
       scrollTop: 0
-    };
+    }
   },
 
-  mounted() {
-    const _this = this;
-    let timer;
+  mounted () {
+    const _this = this
+    let timer
     window.addEventListener('scroll', () => {
-      clearTimeout(timer);
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      clearTimeout(timer)
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       timer = setTimeout(() => {
-        _this.scrollTop = scrollTop;
-      }, 500);
-    });
+        _this.scrollTop = scrollTop
+      }, 500)
+    })
   }
-};
+}
 </script>
 
 <style lang="postcss">

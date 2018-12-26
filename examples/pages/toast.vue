@@ -24,10 +24,10 @@ button {
 export default {
   methods: {
     showSimpleToast () {
-      this.$toast({msg: '我是文字提示~'});
+      this.$toast({ msg: '我是文字提示~' })
     },
     showHtmlToast () {
-      this.$toast('<strong style="font-size: 20px;">HTML 文字提示~</strong>');
+      this.$toast('<strong style="font-size: 20px;">HTML 文字提示~</strong>')
     }
   }
 }

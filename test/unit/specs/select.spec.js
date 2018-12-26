@@ -1,5 +1,6 @@
 import Select from 'packages/select'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Select', () => {
   let wrapper

@@ -1,5 +1,6 @@
 import Switch from 'packages/switch'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Switch', () => {
   let wrapper

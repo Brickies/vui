@@ -18,66 +18,66 @@
 </template>
 
 <script>
-import navConfig from '../nav.config.json';
+import navConfig from '../nav.config.json'
 
 export default {
-  data() {
+  data () {
     return {
       currentPath: null,
       nav: [],
       leftNav: null,
       rightNav: null
-    };
+    }
   },
 
   watch: {
-    '$route.path'() {
-      this.setNav();
-      this.updateNav();
+    '$route.path' () {
+      this.setNav()
+      this.updateNav()
     }
   },
 
   methods: {
-    setNav() {
-      let nav = navConfig['zh-CN'];
+    setNav () {
+      let nav = navConfig['zh-CN']
       for (let i = 0; i < nav.length; i++) {
-        let navItem = nav[i];
+        let navItem = nav[i]
         if (!navItem.groups) {
-          this.nav.push(nav[i]);
+          this.nav.push(nav[i])
         } else {
           for (let j = 0; j < navItem.groups.length; j++) {
-            this.nav = this.nav.concat(navItem.groups[j].list);
+            this.nav = this.nav.concat(navItem.groups[j].list)
           }
         }
       }
     },
 
-    updateNav() {
-      let baseUrl = '/component';
-      let currentIndex;
+    updateNav () {
+      let baseUrl = '/component'
+      let currentIndex
 
-      this.currentPath = this.$route.path.slice(baseUrl.length);
+      this.currentPath = this.$route.path.slice(baseUrl.length)
 
       for (let i = 0, len = this.nav.length; i < len; i++) {
         if (this.nav[i].path === this.currentPath) {
-          currentIndex = i;
-          break;
+          currentIndex = i
+          break
         }
       }
-      this.leftNav = this.nav[currentIndex - 1];
-      this.rightNav = this.nav[currentIndex + 1];
+      this.leftNav = this.nav[currentIndex - 1]
+      this.rightNav = this.nav[currentIndex + 1]
     },
 
-    handleNavClick(direction) {
-      this.$router.push(`/component${ direction === 'prev' ? this.leftNav.path : this.rightNav.path }`);
+    handleNavClick (direction) {
+      this.$router.push(`/component${direction === 'prev' ? this.leftNav.path : this.rightNav.path}`)
     }
   },
 
-  created() {
-    this.setNav();
-    this.updateNav();
+  created () {
+    this.setNav()
+    this.updateNav()
   }
-};
+}
 </script>
 
 <style lang="postcss">

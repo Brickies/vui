@@ -22,7 +22,7 @@
         @click="selectSubDown(index, item.id)" >
         {{item.name || item}}
         <span class="select-icon" v-show="selectClass(index)">
-        	选中
+          选中
         </span>
       </li>
     </ul>
@@ -35,10 +35,10 @@
   </div>
 </template>
 <script>
-import Clickoutside from "src/utils/clickoutside";
+import Clickoutside from 'src/utils/clickoutside'
 
 export default {
-  name: "v-select",
+  name: 'v-select',
   directives: { Clickoutside },
   props: {
     selectData: Array,
@@ -58,38 +58,38 @@ export default {
       default: true
     }
   },
-  data() {
+  data () {
     return {
       selectStatus: false,
       currentIndex: 0,
       showTitle: true
-    };
+    }
   },
-  created() {
+  created () {
     this.currentIndex = ~~this.defaultValue
   },
   methods: {
-    hide() {
-      this.selectStatus = false;
+    hide () {
+      this.selectStatus = false
     },
-    selectDown() {
-      this.selectStatus = !this.selectStatus;
+    selectDown () {
+      this.selectStatus = !this.selectStatus
     },
-    selectClass(index) {
-      return this.currentIndex === index;
+    selectClass (index) {
+      return this.currentIndex === index
     },
-    selectSubDown(currentIndex, id) {
-      this.alwaysShowTitle ? this.showTitle = true : this.showTitle = false;
-      this.selectStatus = false;
-      this.currentIndex = currentIndex;
-      this.$emit("select", currentIndex, id);
+    selectSubDown (currentIndex, id) {
+      this.alwaysShowTitle ? this.showTitle = true : this.showTitle = false
+      this.selectStatus = false
+      this.currentIndex = currentIndex
+      this.$emit('select', currentIndex, id)
     },
-    handleTouchMove(e) {
+    handleTouchMove (e) {
       if (this.selectStatus && this.preventScroll) {
         e.preventDefault()
         e.stopPropagation()
       }
-    },
+    }
   }
-};
+}
 </script>

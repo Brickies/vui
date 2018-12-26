@@ -6,7 +6,7 @@
         class="v-search__input"
         v-model='model'
         :placeholder="placeholder"
-        @keyup="searchKeyupFn"
+        @keyup.exact="searchKeyupFn"
         @click="searchFocusFn"
         @keyup.enter="searchEnterFn"
         @blur="searchBlurFn"
@@ -44,23 +44,23 @@ export default {
       type: Boolean,
       default: false
     },
-    autofocus: Boolean, // iOS移动端autofocus无效
+    autofocus: Boolean // iOS移动端autofocus无效
   },
-  data() {
+  data () {
     return {
       id: null,
       timer: null,
       showClose: false,
       searchFlag: true, // 搜索节流
       model: ''
-    };
+    }
   },
   watch: {
     model (val) {
       if (val) {
-        this.showClose = true;
+        this.showClose = true
       } else {
-        this.showClose = false;
+        this.showClose = false
       }
       if (this.searchFlag) {
         this.$emit('search', this.model)
@@ -69,21 +69,21 @@ export default {
   },
   created () {
     this.$on('clear', () => {
-      this.model = '';
-    });
+      this.model = ''
+    })
   },
   methods: {
-    searchKeyupFn() {
-      let self = this;
-      this.searchFlag = false;
+    searchKeyupFn () {
+      let self = this
+      this.searchFlag = false
 
       if (!this.async) {
-        this.searchFlag = true;
+        this.searchFlag = true
         return
       }
 
       clearTimeout(this.timer)
-      this.timer = setTimeout(function() {
+      this.timer = setTimeout(function () {
         self.searchFlag = true
       }, this.timeout)
     },
@@ -91,15 +91,15 @@ export default {
       this.$emit('enter', this.model)
       this.$refs.input.blur()
       if (this.clear) {
-        this.model = '';
+        this.model = ''
       }
     },
     searchBlurFn () {
       // do something for blur
     },
     closeFn () {
-      this.model = '';
-      this.showClose = false;
+      this.model = ''
+      this.showClose = false
       this.$emit('close', this.model)
     },
     searchFocusFn () {
@@ -107,7 +107,7 @@ export default {
     }
   },
   mounted () {
-    this.autofocus && this.$refs.input.focus();
+    this.autofocus && this.$refs.input.focus()
   }
-};
+}
 </script>

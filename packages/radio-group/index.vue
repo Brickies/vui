@@ -12,8 +12,8 @@ export default {
   },
 
   watch: {
-    value(value) {
-      this.$emit('change', value);
+    value (value) {
+      this.$emit('change', value)
     }
   }
 }

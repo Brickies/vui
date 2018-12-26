@@ -25,12 +25,12 @@ export default {
         require('../assets/beauty_3.png'),
         require('../assets/beauty_4.png'),
         require('../assets/beauty_5.png')
-      ],
+      ]
     }
   },
   methods: {
     changeHandle (index) {
-      console.log(index);
+      console.log(index)
     }
   }
 }

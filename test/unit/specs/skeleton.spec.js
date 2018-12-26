@@ -1,5 +1,6 @@
 import Skeleton from 'packages/skeleton'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Skeleton', () => {
   let wrapper

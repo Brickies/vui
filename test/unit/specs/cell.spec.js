@@ -1,5 +1,6 @@
 import Cell from 'packages/cell'
 import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Cell', () => {
   let wrapper

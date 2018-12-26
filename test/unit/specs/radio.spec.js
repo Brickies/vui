@@ -1,5 +1,6 @@
 import { createTest, destroyVM } from '../util'
 import Radio from 'packages/radio'
+import { expect } from 'chai'
 
 describe('Radio', () => {
   let vm

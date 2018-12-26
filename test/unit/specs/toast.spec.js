@@ -1,5 +1,6 @@
 import Toast from 'packages/toast/toast.js'
 // import { mount } from 'avoriaz'
+import { expect } from 'chai'
 
 describe('Toast', () => {
   let wrapper
@@ -10,10 +11,10 @@ describe('Toast', () => {
   it('create a simple toast', () => {
     Toast('a toast message')
     var toast = document.querySelector('.v-toast')
-    expect(toast).not.to.be.underfined
+    expect(toast).not.to.be.undefined
 
     setTimeout(() => {
-      expect(toast).to.be.underfined
+      expect(toast).to.be.undefined
     }, 2001)
   })
 
@@ -21,10 +22,10 @@ describe('Toast', () => {
     Toast('<strong style="font-size: 20px">HTML 文字提示~</strong>')
     var toast = document.querySelector('.v-toast')
 
-    expect(toast).not.to.be.underfined
+    expect(toast).not.to.be.undefined
 
     setTimeout(() => {
-      expect(toast).to.be.underfined
+      expect(toast).to.be.undefined
     }, 2001)
   })
 })

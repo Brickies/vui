@@ -62,8 +62,8 @@ export default {
     radius () {
       return ~~this.pheight + 'px'
     },
-    transform() {
-      return this.currentVal ? `translate3d(${ ~~this.width - ~~this.pheight }px, 0, 0)` : ''
+    transform () {
+      return this.currentVal ? `translate3d(${~~this.width - ~~this.pheight}px, 0, 0)` : ''
     },
     bgColor () {
       return this.currentVal ? this.activeColor : this.inactiveColor

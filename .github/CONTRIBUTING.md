@@ -40,7 +40,7 @@ $ npm run deploy
 - lib：打包后生成的文件
 - packages：组件目录，每个组件是一个目录
 - src：主文件`index.js`以及一些公用的`mixins`和`utils`
-- test：测试用例
+- tests：测试用例
 
 ### 开发
 

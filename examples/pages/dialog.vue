@@ -43,11 +43,11 @@ export default {
         cancelText: '取消',
         okText: '确定',
         content: '测试 Dialog，测试 Dialog，测试 Dialog~~~',
-        onOk() {
-          console.log('click ok btn to do someting');
+        onOk () {
+          console.log('click ok btn to do someting')
         },
-        onCancel() {
-          console.log('click cancel btn to do someting');
+        onCancel () {
+          console.log('click cancel btn to do someting')
         }
       })
     },
@@ -57,11 +57,11 @@ export default {
         cancelText: '取消',
         okText: '确定',
         content: '<strong style="color: green">测试 Dialog，测试 Dialog，测试 Dialog~~~</strong style="color: green">',
-        onOk() {
-          console.log('click ok btn to do someting');
+        onOk () {
+          console.log('click ok btn to do someting')
         },
-        onCancel() {
-          console.log('click cancel btn to do someting');
+        onCancel () {
+          console.log('click cancel btn to do someting')
         }
       })
     },

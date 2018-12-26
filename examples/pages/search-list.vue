@@ -33,22 +33,22 @@ export default {
   data () {
     return {
       defaultResult: [
-        {name: 'Apple', price: 5, amount: 20},
-        {name: 'Banana', price: 5, amount: 30},
-        {name: 'Orange', price: 3, amount: 10},
-        {name: 'Durian', price: 10, amount: 25},
-        {name: 'Lemon', price: 4, amount: 30},
-        {name: 'Peach', price: 5, amount: 40},
-        {name: 'Cherry', price: 20, amount: 50},
-        {name: 'Berry', price: 15, amount: 60},
-        {name: 'Core', price: 10, amount: 21},
-        {name: 'Fig', price: 10, amount: 22},
-        {name: 'Haw', price: 10, amount: 23},
-        {name: 'Melon', price: 10, amount: 24},
-        {name: 'Plum', price: 10, amount: 25},
-        {name: 'Pear', price: 10, amount: 26},
-        {name: 'Peanut', price: 10, amount: 27},
-        {name: 'Other'}
+        { name: 'Apple', price: 5, amount: 20 },
+        { name: 'Banana', price: 5, amount: 30 },
+        { name: 'Orange', price: 3, amount: 10 },
+        { name: 'Durian', price: 10, amount: 25 },
+        { name: 'Lemon', price: 4, amount: 30 },
+        { name: 'Peach', price: 5, amount: 40 },
+        { name: 'Cherry', price: 20, amount: 50 },
+        { name: 'Berry', price: 15, amount: 60 },
+        { name: 'Core', price: 10, amount: 21 },
+        { name: 'Fig', price: 10, amount: 22 },
+        { name: 'Haw', price: 10, amount: 23 },
+        { name: 'Melon', price: 10, amount: 24 },
+        { name: 'Plum', price: 10, amount: 25 },
+        { name: 'Pear', price: 10, amount: 26 },
+        { name: 'Peanut', price: 10, amount: 27 },
+        { name: 'Other' }
       ]
     }
   }

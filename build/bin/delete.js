@@ -19,7 +19,7 @@ const files = {
   page_file: `examples/pages/${componentname}.vue`,
   md_file: `examples/docs/${componentname}.md`,
   css_file: `packages/vui-css/src/${componentname}.css`,
-  test_file: `test/unit/specs/${componentname}.spec.js`
+  test_file: `tests/unit/specs/${componentname}.spec.js`
 }
 
 prompt([{
