@@ -20,11 +20,11 @@ function broadcast (componentName, eventName, params) {
 }
 
 /**
-* [dispatch 向上传递]
-* @param  {[type]} componentName [组件别名]
-* @param  {[type]} eventName     [事件别名]
-* @param  {[type]} params        [事件回调参数]
-*/
+ * [dispatch 向上传递]
+ * @param  {[type]} componentName [组件别名]
+ * @param  {[type]} eventName     [事件别名]
+ * @param  {[type]} params        [事件回调参数]
+ */
 function dispatch (componentName, eventName, params) {
   var parent = this.$parent || this.$root
   var name = parent.$options.name
