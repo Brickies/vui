@@ -18,7 +18,7 @@
         float: 'left'
       }">
       <div class="v-placeholder-box" v-if="item.box" style="height: 100%; background: #fff"></div>
-      <sub-row :rows="item.rows" />
+      <sub-row v-if="item.rows" :rows="item.rows" />
     </div>
   </div>
 </div>
