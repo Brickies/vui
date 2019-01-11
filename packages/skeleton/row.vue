@@ -1,9 +1,24 @@
 <template>
 <div>
-  <div class="v-placeholder-row" v-for="row in rows" :style="{height: row.height, width: '100%'}">
-    <div v-if="row.boxes" v-for="item in row.boxes" :style="{width: `${item.box||item.width||item}`, height: '100%', float: 'left'}">
+  <div
+    class="v-placeholder-row"
+    v-for="(row, index) in rows"
+    :key="index"
+    :style="{
+      height: row.height,
+      width: '100%'
+    }">
+    <div
+      v-if="row.boxes"
+      v-for="(item, k) in row.boxes"
+      :key="k"
+      :style="{
+        width: `${item.box || item.width || item}`,
+        height: '100%',
+        float: 'left'
+      }">
       <div class="v-placeholder-box" v-if="item.box" style="height: 100%; background: #fff"></div>
-      <sub-row v-if="item.rows" :rows="item.rows"></sub-row>
+      <sub-row :rows="item.rows" />
     </div>
   </div>
 </div>
