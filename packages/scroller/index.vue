@@ -43,14 +43,13 @@
   </div>
 </template>
 
-
 <script>
 import Scroller from 'src/utils/core'
 import getContentRender from 'src/utils/render'
 import Spinner from './spinner'
 import Arrow from './arrow'
 
-const re = /^[\d]+(\%)?$/
+const re = /^[\d]+(\%)?$/ /* eslint-disable-line */
 const widthAndHeightCoerce = (v) => {
   if (v[v.length - 1] !== '%') return v + 'px'
   return v
@@ -152,7 +151,7 @@ export default {
         : false
     }
   },
-  data() {
+  data () {
     return {
       containerId: 'outer-' + Math.random().toString(36).substring(3, 8),
       contentId: 'inner-' + Math.random().toString(36).substring(3, 8),
@@ -174,11 +173,11 @@ export default {
     this.container.style.height = this.h
     this.content = document.getElementById(this.contentId)
     if (this.cssClass) this.content.classList.add(this.cssClass)
-    this.pullToRefreshLayer = this.content.getElementsByTagName("div")[0]
+    this.pullToRefreshLayer = this.content.getElementsByTagName('div')[0]
     let render = getContentRender(this.content)
-    let scrollerOptions = {
-      scrollingX: false
-    }
+    // let scrollerOptions = {
+    //   scrollingX: false
+    // }
 
     this.scroller = new Scroller(render, {
       scrollingX: false,
@@ -228,53 +227,53 @@ export default {
         content_height = height
         this.resize()
       }
-    }, 10);
+    }, 10)
   },
   destroyed () {
-    clearInterval(this.resizeTimer);
-    if (this.infiniteTimer) clearInterval(this.infiniteTimer);
+    clearInterval(this.resizeTimer)
+    if (this.infiniteTimer) clearInterval(this.infiniteTimer)
   },
   methods: {
-    resize() {
-      let container = this.container;
-      let content = this.content;
-      this.scroller.setDimensions(container.clientWidth, container.clientHeight, content.offsetWidth, content.offsetHeight);
+    resize () {
+      let container = this.container
+      let content = this.content
+      this.scroller.setDimensions(container.clientWidth, container.clientHeight, content.offsetWidth, content.offsetHeight)
     },
-    finishPullToRefresh() {
+    finishPullToRefresh () {
       this.scroller.finishPullToRefresh()
     },
-    finishInfinite(hideSpinner) {
+    finishInfinite (hideSpinner) {
       this.loadingState = hideSpinner ? 2 : 0
       this.showLoading = false
-      // console.log('this.showLoading', this.showLoading);
+      // console.log('this.showLoading', this.showLoading)
       // if (this.loadingState === 2) {
       //   this.resetLoadingState()
       // }
     },
-    triggerPullToRefresh() {
+    triggerPullToRefresh () {
       this.scroller.triggerPullToRefresh()
     },
-    scrollTo(x, y, animate) {
+    scrollTo (x, y, animate) {
       this.scroller.scrollTo(x, y, animate)
     },
-    scrollBy(x, y, animate) {
+    scrollBy (x, y, animate) {
       this.scroller.scrollBy(x, y, animate)
     },
-    touchStart(e) {
+    touchStart (e) {
       // Don't react if initial down happens on a form element
       if (e.target.tagName.match(/input|textarea|select/i)) {
         return
       }
       this.scroller.doTouchStart(e.touches, e.timeStamp)
     },
-    touchMove(e) {
+    touchMove (e) {
       e.preventDefault()
       this.scroller.doTouchMove(e.touches, e.timeStamp)
     },
-    touchEnd(e) {
+    touchEnd (e) {
       this.scroller.doTouchEnd(e.timeStamp)
-      let {left, top, zoom} = this.scroller.getValues()
-      // console.log(left, top, this.content.offsetHeight, this.container.clientHeight);
+      let { top } = this.scroller.getValues()
+      // console.log(left, top, this.content.offsetHeight, this.container.clientHeight)
       // 初始化load状态
       if (this.loadingState === 2) {
         this.loadingState = 2
@@ -289,11 +288,11 @@ export default {
           // if (this.loadingState) return
           this.loadingState = 1
           this.showLoading = true
-          if (this.isLoadMore) this.onInfinite(this.finishInfinite);
+          if (this.isLoadMore) this.onInfinite(this.finishInfinite)
         }
       }
     },
-    mouseDown(e) {
+    mouseDown (e) {
       // Don't react if initial down happens on a form element
       if (e.target.tagName.match(/input|textarea|select/i)) {
         return
@@ -304,7 +303,7 @@ export default {
       }], e.timeStamp)
       this.mousedown = true
     },
-    mouseMove(e) {
+    mouseMove (e) {
       if (!this.mousedown) {
         return
       }
@@ -314,7 +313,7 @@ export default {
       }], e.timeStamp)
       this.mousedown = true
     },
-    mouseUp(e) {
+    mouseUp (e) {
       if (!this.mousedown) {
         return
       }
@@ -322,18 +321,16 @@ export default {
       this.mousedown = false
     },
     // 获取位置
-    getPosition() {
+    getPosition () {
       let v = this.scroller.getValues()
-      console.log(v);
+      console.log(v)
       return {
         left: parseInt(v.left),
         top: parseInt(v.top)
       }
     },
-    resetLoadingState() {
-      let {left, top, zoom} = this.scroller.getValues()
-      let container = this.container;
-      let content = this.content;
+    resetLoadingState () {
+      let { top } = this.scroller.getValues()
       if (top - 20 > this.content.offsetHeight - this.container.clientHeight) {
         setTimeout(() => {
           this.resetLoadingState()
