@@ -1,54 +1,14 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  position: relative;
+}
+.page-footer {
+  font-size: 13px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+}
 
 .page-header {
     position: fixed;
