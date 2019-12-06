@@ -14,6 +14,10 @@
         </div>
       </div>
     </div>
+    <div class="page-footer">
+      ©2017-2019&nbsp;<a href="https://github.com/xuqiang521" target="_blank">qiangdada</a>&nbsp;
+      <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备18005908号-1</a>
+    </div>
   </div>
 </template>
 
@@ -41,12 +45,13 @@ export default {
 </script>
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  position: relative;
+}
+.page-footer {
+  font-size: 13px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+  position: sticky;
+  bottom: 20px;
+}
 </style>
