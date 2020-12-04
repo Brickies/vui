@@ -84,7 +84,7 @@
     "file-save": "^0.2.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "gh-pages": "^1.1.0",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.4.1",
     "html-webpack-plugin": "^2.30.1",
     "inject-loader": "^3.0.0",
     "inquirer": "^5.1.0",
